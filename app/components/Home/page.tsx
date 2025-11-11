@@ -22,6 +22,39 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-white text-slate-900">
+            {/* Ellipses*/}
+
+      <div className="absolute bottom-40 -left-20 z-30">
+            <Image
+              src="/Ellipse 3.png"
+              alt="Ellipse 3"
+             width={500}
+             height={800}
+             className="object-contain"
+            />
+            </div>
+             
+
+      <div className="absolute -top-12 -left-10 z-30">
+            <Image
+              src="/Ellipse 4.png"
+              alt="Ellipse 4"
+              width={500}
+              height={700}
+              className="object-contain"
+             />
+        </div>
+      <div className="absolute -top-14 -left-2 z-30">
+          <Image
+             src="/Ellipse 5.png"
+             alt="Ellipse 5"
+              width={500}
+              height={600}
+            className="object-contain"
+  />
+</div>
+
+
       <header className="max-w-7xl mx-auto px-6 pt-8 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center ml-14">
@@ -107,14 +140,40 @@ export default function Home() {
                  />
               </Link>
             </div>
-            
 
-            <div className="flex items-center gap-4 mt-8">
+             <div className="flex items-center gap-4 mt-8">
               <div className="flex gap-3 items-center">
-                <a className="w-9 h-9 rounded-full border flex items-center justify-center text-sm hover:bg-gray-100" href="#">f</a>
-                <a className="w-9 h-9 rounded-full border flex items-center justify-center text-sm hover:bg-gray-100" href="#">i</a>
-                <a className="w-9 h-9 rounded-full border flex items-center justify-center text-sm hover:bg-gray-100">▶</a>
-              </div>
+                
+              <Link href="#">
+                <Image
+                  src="/Facebook.png"
+                  alt="FB"
+                  width={40}
+                  height={40}
+                  className="object-contain"
+                />
+              </Link>
+              <Link href="#">
+                <Image
+                  src="/insta.png"
+                  alt="Insta"
+                  width={40}
+                  height={40}
+                  className="object-contain"
+                 />
+              </Link>
+              <Link href="#">
+                <Image
+                  src="/Facebook (2).png"
+                  alt="Youtube"
+                  width={40}
+                  height={40}
+                  className="object-contain"
+                 />
+              </Link>
+            
+                              
+               </div>
               <div className="h-px bg-slate-200 flex-1"></div>
             </div>
           </div>
@@ -161,13 +220,13 @@ export default function Home() {
             </div>
 
   {/* Vector (10)   */}
-<div className="absolute bottom-60 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+<div className="absolute bottom-[280px] left-1 z-10">
   <Image
     src="/Vector (10).png"
     alt="vector"
-    width={1000}   
-    height={900}
-    className="object-contain w-[600px] md:w-[1000px] lg:w-[1220px] h-auto"
+    width={500}   
+    height={200}
+    className="object-contain w-[200px] md:w-[300px] lg:w-[520px]  "
   />
 </div>
 
@@ -192,33 +251,7 @@ export default function Home() {
       className="object-contain"
     />
   </div>
-  <div className="absolute top-0 mr-96 z-30">
-  <Image
-    src="/Ellipse 3.png"
-    alt="Ellipse 3"
-    width={1000}
-    height={1200}
-    className="object-contain"
-  />
-</div>
-<div className="absolute top-0 left-0 mr-96 z-30">
-  <Image
-    src="/Ellipse 4.png"
-    alt="Ellipse 4"
-    width={1000}
-    height={1200}
-    className="object-contain"
-  />
-</div>
-<div className="absolute top-0 left-0 mr-96 z-30">
-  <Image
-    src="/Ellipse 5.png"
-    alt="Ellipse 5"
-    width={1000}
-    height={1200}
-    className="object-contain"
-  />
-</div>
+  
 </div>
         </div>
       </section>
