@@ -8,9 +8,13 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'david-libre': ['David Libre', 'serif'],
+        'open-sans': ['Open Sans', 'sans-serif'],
       },
+      letterSpacing: {
+        'super-wide': '0.2em',
+        'ultra-wide': '0.3em',
+      }
     },
   },
-  plugins: [],
+   plugins: [],
 }
