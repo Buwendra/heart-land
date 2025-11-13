@@ -6,19 +6,28 @@ import { Play } from "lucide-react";
 export default function Initiative() {
   return (
     <section className="py-36 bg-white relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        {/* Left Section - Images */}
-        
-          <div className="relative  ml-20 w-80 h-80 md:w-[430px] md:h-[430px] overflow-visible">
-  <Image
-    src="/Group 69.png"
-    alt="Child Initiative"
-    fill
-    className="object-contain"
-  />
-</div>
+      {/* Right side background image */}
+      <div className="absolute right-0 -top-24 bottom-0 w-[700px] opacity-100 pointer-events-none">
+        <Image
+          src="/initiatives bg.png"
+          alt="Background Shape"
+          fill
+          className="object-contain object-right"
+          priority
+        />
+      </div>
 
-       
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
+        {/* Left Section - Images */}
+        <div className="relative ml-20 w-80 h-80 md:w-[430px] md:h-[430px] overflow-visible">
+          <Image
+            src="/Group 69.png"
+            alt="Child Initiative"
+            fill
+            className="object-contain"
+          />
+        </div>
+
         {/* Right Section - Text Content */}
         <div className="space-y-6 -mt-40 -ml-17 text-center md:text-left">
           <p className="uppercase text-gray-400 text-sm tracking-widest">
@@ -39,10 +48,12 @@ export default function Initiative() {
               Learn More
             </button>
 
-            <button className="group flex items-center justify-center gap-3 border-[3px] border-[#D11417] text-[#000000] font-nunito font-bold text-[20px] leading-[100%] px-8 py-3 rounded-full transition-all duration-300 hover:bg-black hover:text-white">
-      <Play className="w-5 h-10 fill-[#000000] transition-colors duration-300 group-hover:fill-white" />
-      Watch Videos
-    </button>
+            <button className="group flex items-center justify-center gap-3 border-[3px] border-[#D11417] text-[#000000] font-nunito font-bold text-[20px] leading-[100%] px-6 py-4 rounded-full transition-all duration-300 hover:bg-black hover:text-white">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#000000] transition-all duration-300 group-hover:bg-white">
+                <Play className="w-7 h-7 fill-white transition-all duration-300 group-hover:fill-[#000000]" />
+              </div>
+              Watch Videos
+            </button>
           </div>
         </div>
       </div>
