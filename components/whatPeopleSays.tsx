@@ -11,7 +11,7 @@ export default function WhatPeopleSays() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-6 md:px-12">
 
         {/* Card 1 */}
-<div className="bg-white rounded-xl p-6 w-full max-w-[340px] mx-auto shadow-[5px_20px_30px_rgba(0,0,0,0.70)] transition-transform duration-300 hover:scale-105">
+<div className="bg-white rounded-xl p-6 w-full max-w-[340px] mx-auto shadow-[5px_20px_30px_rgba(0,0,0,0.70)] transition-transform duration-300 hover:scale-110">
 
           <div className="flex items-center gap-3 mb-4">
             <img src="/fathima.png" className="w-10 h-10 rounded-full" />
@@ -24,6 +24,14 @@ export default function WhatPeopleSays() {
               </p>
             </div>
           </div>
+          {/* line */}
+<div className="my-3">
+  <div
+    className="w-[294px] border-t border-[#EFEFEF] opacity-100"
+    style={{ transform: "rotate(-0.17deg)" }}
+  />
+</div>
+
           <p className="text-sm text-gray-700 leading-relaxed" style={{ fontFamily: "Open Sans" }}>
             “Heartland helped me launch my own spice brand through their Women in Food Enterprise 
             project. I received training in packaging and export marketing and today my products are 
@@ -32,7 +40,7 @@ export default function WhatPeopleSays() {
         </div>
 
         {/* Card 2 */}
-<div className="bg-white rounded-xl p-6 w-full max-w-[340px] mx-auto shadow-[5px_20px_30px_rgba(0,0,0,0.70)] transition-transform duration-300 hover:scale-105">
+<div className="bg-white rounded-xl p-6 w-full max-w-[340px] mx-auto shadow-[5px_20px_30px_rgba(0,0,0,0.70)] transition-transform duration-300 hover:scale-110">
           <div className="flex items-center gap-3 mb-4">
             <img src="/arjun.png" className="w-10 h-10 rounded-full" />
             <div>
@@ -44,6 +52,14 @@ export default function WhatPeopleSays() {
               </p>
             </div>
           </div>
+
+          {/* line */}
+<div className="my-3">
+  <div
+    className="w-[294px] border-t border-[#EFEFEF] opacity-100"
+    style={{ transform: "rotate(-0.17deg)" }}
+  />
+</div>
           <p className="text-sm text-gray-700 leading-relaxed" style={{ fontFamily: "Open Sans" }}>
             “Heartland’s initiatives go beyond charity — they build self-reliance. I’ve seen how the 
             clean water and nutrition programs bring real change to rural families. It’s inspiring to 
@@ -52,7 +68,7 @@ export default function WhatPeopleSays() {
         </div>
 
         {/* Card 3 */}
-<div className="bg-white rounded-xl p-6 w-full max-w-[340px] mx-auto shadow-[5px_20px_30px_rgba(0,0,0,0.70)] transition-transform duration-300 hover:scale-105">
+<div className="bg-white rounded-xl p-6 w-full max-w-[340px] mx-auto shadow-[5px_20px_30px_rgba(0,0,0,0.70)] transition-transform duration-300 hover:scale-110">
           <div className="flex items-center gap-3 mb-4">
             <img src="/farhan.png" className="w-10 h-10 rounded-full" />
             <div>
@@ -64,6 +80,15 @@ export default function WhatPeopleSays() {
               </p>
             </div>
           </div>
+
+          {/* line */}
+<div className="my-3">
+  <div
+    className="w-[294px] border-t border-[#EFEFEF] opacity-100"
+    style={{ transform: "rotate(-0.17deg)" }}
+  />
+</div>
+
           <p className="text-sm text-gray-700 leading-relaxed" style={{ fontFamily: "Open Sans" }}>
             “Before joining Heartland’s farmer training program, I struggled to find consistent buyers 
             for my crops. With their guidance, I learned modern cultivation methods and now supply 
