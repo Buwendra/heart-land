@@ -46,8 +46,8 @@ export default function HaveQ() {
               style={{ width: 370, height: 370, marginRight: -60 }}
             >
               <Image
-                src="/questionMark.png"
-                alt="chili splash"
+                src="/questionPerson.png"
+                alt="question Mark"
                 width={150}
                 height={150}
                 className="object-contain"
