@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Roboto, Nunito, Open_Sans } from "next/font/google";
 
-const roboto = Roboto({ subsets: ["latin"], weight: ["400", "600"] });
+const roboto = Roboto({ subsets: ["latin"], weight: ["400", "700"] });
 const nunito = Nunito({ subsets: ["latin"], weight: ["600", "700"] });
 const openSans = Open_Sans({ subsets: ["latin"], weight: ["400", "600"] });
 
