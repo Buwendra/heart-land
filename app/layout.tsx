@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Open_Sans, David_Libre } from "next/font/google";
 import "./globals.css";
+import FadeTransition from "../components/FadeTransition";
+import Navbar from "../components/Navbar";
+import Footer from "@/components/footer";
+import { NavigationProvider } from "@/contexts/NavigationContext";
 
 // Default font  
 const openSans = Open_Sans({
@@ -29,7 +33,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${openSans.className} ${davidLibre.variable}`}>
-      <body>{children}</body>
+      <body>
+        <NavigationProvider>
+          <Navbar />
+          <FadeTransition>
+            {children}
+          </FadeTransition>
+          <Footer/>
+        </NavigationProvider>
+      </body>
     </html>
   );
 }

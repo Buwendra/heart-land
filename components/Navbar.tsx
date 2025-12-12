@@ -2,7 +2,8 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { useNavigation } from "@/contexts/NavigationContext";
 
 export default function Navbar() {
   const links = [
@@ -15,19 +16,27 @@ export default function Navbar() {
   ];
 
   const pathname = usePathname();
+  const router = useRouter();
   const [mounted, setMounted] = useState(false);
+  const { isNavigating, setIsNavigating } = useNavigation();
 
  useEffect(() => {
-  // Wrap in setTimeout to avoid synchronous state update warning
+  
   const timer = setTimeout(() => setMounted(true), 0);
   return () => clearTimeout(timer); // cleanup
 }, []);
 
 
   const getActiveLink = (href: string) => {
-
     if (href === "/") return pathname === "/";
     return pathname.startsWith(href);
+  };
+
+  const handleNavigation = (href: string, e: React.MouseEvent) => {
+    e.preventDefault();
+    if (href === pathname) return;
+    
+    router.push(href);
   };
 
   return (
@@ -48,15 +57,23 @@ export default function Navbar() {
         <nav className="hidden md:flex gap-12 items-center text-xl font-semibold leading-10 tracking-[-1px] font-sans">
           {links.map((link) => (
             <div key={link.name} className="relative group">
-              <Link href={link.href} className="cursor-pointer inline-block">
+              <a 
+                href={link.href} 
+                onClick={(e) => handleNavigation(link.href, e)}
+                className={`cursor-pointer inline-block transition-all duration-300 hover:scale-105 ${
+                  getActiveLink(link.href)
+                    ? "text-[#D11417]"
+                    : "text-gray-800 hover:text-[#D11417]"
+                }`}
+              >
                 {link.name}
-              </Link>
+              </a>
 
               <span
-                className={`absolute left-0 -bottom-1 h-[3px] transition-all duration-300 ${
+                className={`absolute left-0 -bottom-1 h-[3px] transition-all duration-500 ease-out ${
                   getActiveLink(link.href)
-                    ? "w-full bg-[#D11417]"
-                    : "w-0 bg-black group-hover:w-full"
+                    ? "w-full bg-[#D11417] shadow-lg"
+                    : "w-0 bg-[#D11417] group-hover:w-full group-hover:shadow-md"
                 }`}
               ></span>
             </div>
