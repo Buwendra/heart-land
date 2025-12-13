@@ -4,6 +4,26 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Partners() {
+  const slowRef = React.useRef<HTMLDivElement>(null);
+const mediumRef = React.useRef<HTMLDivElement>(null);
+
+React.useEffect(() => {
+  const onScroll = () => {
+    const y = window.scrollY;
+
+    if (slowRef.current) {
+      slowRef.current.style.transform = `translateY(${y * 0.04}px)`;
+    }
+
+    if (mediumRef.current) {
+      mediumRef.current.style.transform = `translateY(${y * 0.08}px)`;
+    }
+  };
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  return () => window.removeEventListener("scroll", onScroll);
+}, []);
+
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
@@ -48,7 +68,7 @@ export default function Partners() {
         {/* Two-column section */}
 <div className="relative grid ml-14 gap-10 items-start">
   {/* Left: image group */}
-  <div className="relative flex gap-5 justify-start">
+  <div ref={mediumRef} className="relative flex gap-5 -top-30 justify-start">
     {/* Market image */}
     <div className="w-[230px] h-[420px] overflow-hidden">
       <Image

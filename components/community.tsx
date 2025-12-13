@@ -17,17 +17,18 @@ export default function CommunitySection() {
   }, []);
 
   return (
-    <section className={`w-full flex justify-center py-20 bg-white ${openSans.className}`}>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+    <section className={`w-full   flex justify-center py-20 bg-white ${openSans.className}`}>
+      <div className="grid grid-cols-1 -mt-30 md:grid-cols-2 gap-36 items-center">
 
         {/* IMAGE */}
         <Image
-          src="/unsplash.png"
-          alt="Community"
-          width={700}
-          height={600}
-          className="max-w-[1500px] w-auto h-auto rounded-r-[70px] transition-transform duration-300"
-        />
+  src="/unsplash.png"
+  alt="Community"
+  width={900}        // increased from 750
+  height={800}       // increased from 650
+  className="max-w-[1800px] w-auto h-auto rounded-r-[70px] transition-transform duration-300"
+/>
+
 
         {/* TEXT */}
         <div className="ml-24">
@@ -52,4 +53,4 @@ export default function CommunitySection() {
       </div>
     </section>
   );
-}
+}  

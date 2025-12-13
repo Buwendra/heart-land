@@ -1,8 +1,12 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import { useEffect, useRef } from "react";
+
 
 export default function Faq() {
+  
+ 
   const [openIndex, setOpenIndex] = useState(0);
 
   const faqs = [
@@ -33,6 +37,8 @@ export default function Faq() {
     },
   ];
 
+  
+
   return (
     <section className="py-20 bg-white">
         <div className="text-center ">
@@ -46,7 +52,7 @@ export default function Faq() {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         
         {/* Left Side Images */}
-        <div className="flex justify-center -left-10">
+        <div className="flex justify-center  -left-10">
           <div className="flex gap-4 mr-20">
             <div className="w-24 h-[580px] top-14 relative overflow-hidden rounded-lg">
               <Image

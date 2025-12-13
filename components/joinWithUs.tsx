@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Nunito, Open_Sans } from "next/font/google";
 
 const nunito = Nunito({ subsets: ["latin"], weight: ["600"] });
@@ -8,6 +8,13 @@ const openSans = Open_Sans({ subsets: ["latin"], weight: ["400"] });
 
 export default function JoinWithUs() {
   const bgPath = "/Rectangle 4585.png";
+  const [offset, setOffset] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setOffset(window.scrollY * 0.1);  
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <section
@@ -17,11 +24,12 @@ export default function JoinWithUs() {
     >
       {/* Background Image Layer */}
       <div
-        className="absolute inset-0 bg-no-repeat bg-center "
+        className="absolute inset-0 bg-no-repeat -top-[1000px] bg-center"
         style={{
           backgroundImage: `url("${bgPath}")`,
-          backgroundSize: "100%",      
-          opacity: 1.3,              
+          backgroundSize: "100%",
+          transform: `translateY(${offset}px)`,  
+          transition: "transform 0.1s linear",
         }}
       />
 

@@ -1,5 +1,6 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Open_Sans, Nunito } from "next/font/google";
 
@@ -7,14 +8,15 @@ const nunito = Nunito({ subsets: ["latin"], variable: "--font-nunito" });
 const openSans = Open_Sans({ subsets: ["latin"], variable: "--font-open-sans" });
 
 export default function Founders() {
+  const [mounted, setMounted] = useState(false);
   const cardsRef = useRef<Array<HTMLDivElement | null>>([]);
 
-  // Scroll parallax effect
   useEffect(() => {
+    setMounted(true);
+
     const handleScroll = () => {
       cardsRef.current.forEach((card) => {
         if (!card) return;
-
         const rect = card.getBoundingClientRect();
         const offset = rect.top * 0.15;
 
@@ -36,6 +38,8 @@ export default function Founders() {
   const setCardRef = (el: HTMLDivElement | null, index: number) => {
     cardsRef.current[index] = el;
   };
+
+  if (!mounted) return null; // Render nothing on server to prevent hydration mismatch
 
   return (
     <section className="py-20 bg-white">

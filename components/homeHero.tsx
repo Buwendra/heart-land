@@ -1,13 +1,34 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import Image from 'next/image';
-import Link from 'next/link';
+
+import React, { useEffect, useRef } from "react";
+import Image from "next/image";
+import Link from "next/link";
+
 
 export default function HomeHero() {
-   
-  
+const slowRef = useRef<HTMLDivElement>(null);
+const mediumRef = useRef<HTMLDivElement>(null);
+const fastRef = useRef<HTMLDivElement>(null);
 
-  return (
+useEffect(() => {
+  const handleScroll = () => {
+    const y = window.scrollY;
+
+    if (slowRef.current)
+      slowRef.current.style.transform = `translateY(${y * 0.05}px)`;
+
+    if (mediumRef.current)
+      mediumRef.current.style.transform = `translateY(${y * 0.1}px)`;
+
+    if (fastRef.current)
+      fastRef.current.style.transform = `translateY(${y * 0.15}px)`;
+  };
+
+  window.addEventListener("scroll", handleScroll, { passive: true });
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
+     return (
     <main className="min-h-screen bg-white text-slate-900">
           
  
@@ -130,7 +151,10 @@ export default function HomeHero() {
 <div className="md:col-span-5 lg:col-span-6 relative flex items-center justify-center min-h-[600px]">
   
   {/* World Map - Background Layer */}
-  <div className="absolute -left-125 top-7 w-[420px] h-[300px] md:w-[2020px] md:h-[1080px] opacity-50 pointer-events-none">
+<div
+  ref={mediumRef}
+  className="absolute -left-140 top-4 w-[420px] h-[300px] md:w-[2020px] md:h-[1080px] opacity-60 pointer-events-none"
+>
               <Image 
                 src="/MapNew.png" 
                 alt="world map" 
@@ -179,10 +203,10 @@ export default function HomeHero() {
 </div>
 
   {/* Hero Image - Main Layer */}
-  <div className="relative w-full max-w-[360px] md:bottom-20 md:left-32 md:max-w-[620px] h-[400px] md:h-[700px] z-20">
+  <div ref={fastRef} className=" relative w-full max-w-[360px] md:bottom-20 md:left-32 md:max-w-[620px] h-[400px] md:h-[700px] z-20">
     <Image 
       src="/image 10.png" 
-      alt="hero" 
+      alt="SL map" 
       fill
       style={{ objectFit: 'contain' }}
       priority

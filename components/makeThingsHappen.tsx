@@ -1,12 +1,25 @@
 "use client";
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function HeroBanner() {
+  const chiliRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!chiliRef.current) return;
+
+      const offset = window.scrollY * 0.02; // slow parallax
+      chiliRef.current.style.transform = `translateY(${offset}px)`;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <section className="relative w-full overflow-visible mt-10 mb-36">
-        
       {/* Red banner */}
       <div className="bg-[#D11417] w-full">
         <div className="max-w-7xl mx-auto px-6 py-5">
@@ -27,9 +40,10 @@ export default function HeroBanner() {
               </div>
             </div>
 
-            {/* Right decorative image */}
+            {/* Right decorative image with parallax */}
             <div
-              className="absolute right-0 top-0 -translate-y-1/2 pointer-events-none"
+              ref={chiliRef}
+              className="absolute right-0 -top-30 -translate-y-1/2 pointer-events-none"
               style={{ width: 370, height: 370, marginRight: -60 }}
             >
               <Image
@@ -61,19 +75,18 @@ export default function HeroBanner() {
               </p>
 
               {/* CTA */}
-<Link href="/Contact">
-  <button
-    className="mt-6 inline-flex items-center justify-center cursor-pointer px-9 py-2 rounded-full border border-white text-white font-openSans font-semibold text-[16px] leading-4 tracking-[0.43em] transition-colors duration-200"
-    style={{ textTransform: "uppercase" }}
-  >
-    CONTACT US
-  </button>
-</Link>
+              <Link href="/Contact">
+                <button
+                  className="mt-6 inline-flex items-center justify-center cursor-pointer px-9 py-2 rounded-full border border-white text-white font-openSans font-semibold text-[16px] leading-4 tracking-[0.43em] transition-colors duration-200"
+                  style={{ textTransform: "uppercase" }}
+                >
+                  CONTACT US
+                </button>
+              </Link>
             </div>
           </div>
         </div>
       </div>
- 
     </section>
   );
 }
