@@ -12,23 +12,28 @@ export default function Founders() {
   const cardsRef = useRef<Array<HTMLDivElement | null>>([]);
 
   useEffect(() => {
-    setMounted(true);
+  const timer = setTimeout(() => setMounted(true), 0);
 
-    const handleScroll = () => {
-      cardsRef.current.forEach((card) => {
-        if (!card) return;
-        const rect = card.getBoundingClientRect();
-        const offset = rect.top * 0.15;
+  const handleScroll = () => {
+    cardsRef.current.forEach((card) => {
+      if (!card) return;
+      const rect = card.getBoundingClientRect();
+      const offset = rect.top * 0.15;
 
-        const imgWrapper = card.querySelector<HTMLElement>(".parallax-img");
-        if (imgWrapper) imgWrapper.style.transform = `translateY(${offset}px)`;
-      });
-    };
+      const imgWrapper = card.querySelector<HTMLElement>(".parallax-img");
+      if (imgWrapper) imgWrapper.style.transform = `translateY(${offset}px)`;
+    });
+  };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  window.addEventListener("scroll", handleScroll);
+  return () => {
+    clearTimeout(timer);
+    window.removeEventListener("scroll", handleScroll);
+  };
+}, []);
 
+
+ 
   const founders = [
     { name: "Mr. Aravinda Perera", title: "Director", img: "/founder 1.png" },
     { name: "Ms. Dulani Fernando", title: "Co-Founder & Director of Operations", img: "/founder 2.png" },

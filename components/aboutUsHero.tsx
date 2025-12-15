@@ -10,7 +10,10 @@ export default function AboutHero() {
   const [mounted, setMounted] = useState(false);
   const imageRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => setMounted(true), []);
+useEffect(() => {
+  const timer = setTimeout(() => setMounted(true), 0);
+  return () => clearTimeout(timer);
+}, []);
 
   // Parallax scrolling for right images
   useEffect(() => {

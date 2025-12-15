@@ -14,9 +14,11 @@ export default function WhyWorkWithUs() {
   const { scrollY } = useScroll();
   const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+useEffect(() => {
+  const timer = setTimeout(() => setMounted(true), 0);
+  return () => clearTimeout(timer);
+}, []);
+
 
   const y1 = useTransform(scrollY, [0, 400], [0, -80]);
   const y2 = useTransform(scrollY, [0, 400], [0, -80]);

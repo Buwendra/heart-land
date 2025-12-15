@@ -33,9 +33,11 @@ export default function TeamMembers() {
     if (scrollRef.current) scrollRef.current.scrollBy({ left: 300, behavior: "smooth" });
   };
 
-  useEffect(() => {
-    setMounted(true);  
-  }, []);
+useEffect(() => {
+  const timer = setTimeout(() => setMounted(true), 0);
+  return () => clearTimeout(timer);
+}, []);
+
 
   if (!mounted) return null;  
 
