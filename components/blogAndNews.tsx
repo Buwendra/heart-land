@@ -3,6 +3,8 @@
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { Nunito, Open_Sans } from "next/font/google";
+import { useRouter } from "next/navigation";
+
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -15,6 +17,8 @@ const openSans = Open_Sans({
 });
 
 export default function AboutUsPage() {
+  const router = useRouter();
+
   const [offsetY, setOffsetY] = useState(0);
 
   const handleScroll = () => setOffsetY(window.pageYOffset);
@@ -42,7 +46,9 @@ export default function AboutUsPage() {
         </p>
 
         {/* CTA Button */}
-        <button className={`cta-button ${nunito.className}`}>
+        <button className={`cta-button ${nunito.className}`}
+          onClick={() => router.push("/About")}  
+          >
           <span className="cta-text">Know More</span>
           <span className="cta-icon-wrapper">
             <Image
@@ -65,22 +71,28 @@ export default function AboutUsPage() {
             src="/Group20.png"
             alt="Main"
             fill
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: "contain" }}
           />
         </div>
       </div>
 
       <style jsx>{`
-        .about-container {
-          width: 100%;
-          min-height: 100vh;
-          background: #ffffff;
-          padding: 50px 100px;
-          display: flex;
-          gap: 20px;
-          box-sizing: border-box;
-          
-        }
+
+
+
+       .about-container {
+
+ max-width: 1240px;
+ margin: 0 auto;
+ padding: 60px 50px;
+  min-height: 100vh;
+  background: #ffffff;
+ /* ✅ centers horizontally */
+  display: flex;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
 
         .left-content {
           width: 594px;
@@ -166,7 +178,7 @@ export default function AboutUsPage() {
           display: flex;
           justify-content: center;
           align-items: flex-start;
-          padding-left: 20px;
+           padding-left: 20px;
         }
 
         .main-image-wrapper {

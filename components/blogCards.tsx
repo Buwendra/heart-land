@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Roboto } from "next/font/google";
+import { useEffect, useState } from "react";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -21,7 +22,7 @@ type Card = {
 
 const cards: Card[] = [
   {
-    category: "Category",
+    category: "Category One",
     title: "Empowering Local Farmers Through Ethical Sourcing",
     description: "Brief excerpt of the blog post content.",
     author: "John Doe",
@@ -31,7 +32,7 @@ const cards: Card[] = [
     avatar: "/blogAvatar.png",
   },
   {
-    category: "Category",
+    category: "Category One",
     title: "The Rise of Healthy Eating in Modern Households",
     description: "Brief excerpt of the blog post content.",
     author: "John Doe",
@@ -41,7 +42,7 @@ const cards: Card[] = [
     avatar: "/blogAvatar1.png",
   },
   {
-    category: "Category",
+    category: "Category Two",
     title: "Sustainable Food Distribution: Building a Greener Future",
     description: "Brief excerpt of the blog post content.",
     author: "John Doe",
@@ -51,7 +52,7 @@ const cards: Card[] = [
     avatar: "/blogAvatar2.png",
   },
   {
-    category: "Category",
+    category: "Category Two",
     title: "Empowering Local Farmers Through Ethical Sourcing",
     description: "Brief excerpt of the blog post content.",
     author: "John Doe",
@@ -61,7 +62,7 @@ const cards: Card[] = [
     avatar: "/blogAvatar.png",
   },
   {
-    category: "Category",
+    category: "Category Three",
     title: "The Rise of Healthy Eating in Modern Households",
     description: "Brief excerpt of the blog post content.",
     author: "John Doe",
@@ -71,7 +72,7 @@ const cards: Card[] = [
     avatar: "/blogAvatar1.png",
   },
   {
-    category: "Category",
+    category: "Category Four",
     title: "Sustainable Food Distribution: Building a Greener Future",
     description: "Brief excerpt of the blog post content.",
     author: "John Doe",
@@ -83,30 +84,58 @@ const cards: Card[] = [
 ];
 
 export default function BlogSection() {
+  // Selected category state
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  // Parallax scroll
+  const [offsetY, setOffsetY] = useState(0);
+  useEffect(() => {
+    const onScroll = () => setOffsetY(window.scrollY);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Filtered cards based on selected category
+  const filteredCards =
+    selectedCategory === "All"
+      ? cards
+      : cards.filter((card) => card.category === selectedCategory);
+
   return (
     <section className={`section ${roboto.className}`}>
       <div className="container">
         {/* Categories */}
         <div className="categories">
-          <button className="viewAll">View All</button>
-          <span className="categoryText">Category One</span>
-          <span className="categoryText">Category Two</span>
-          <span className="categoryText">Category Three</span>
-          <span className="categoryText">Category Four</span>
+          <button className="viewAll" onClick={() => setSelectedCategory("All")}>
+            View All
+          </button>
+
+          {["Category One", "Category Two", "Category Three", "Category Four"].map((cat) => (
+            <span
+              key={cat}
+              className="categoryText"
+              onClick={() => setSelectedCategory(cat)}
+              style={{ fontWeight: selectedCategory === cat ? 700 : 400 }}
+            >
+              {cat}
+            </span>
+          ))}
         </div>
 
         {/* Cards */}
         <div className="grid">
-          {cards.map((card, i) => (
-            <div key={i} className="card">
+          {filteredCards.map((card, i) => (
+            <div
+              key={i}
+              className="card"
+              style={{
+                transform: `translateY(${Math.sin((offsetY + i * 60) / 200) * 16}px)`,
+                transition: "transform 0.1s ease-out",
+              }}
+            >
               {/* IMAGE */}
               <div className="imagePlaceholder">
-                <Image
-                  src={card.image}
-                  alt={card.title}
-                  fill
-                  className="blogImage"
-                />
+                <Image src={card.image} alt={card.title} fill className="blogImage" />
               </div>
 
               <div className="content">
@@ -117,12 +146,7 @@ export default function BlogSection() {
                 {/* AVATAR */}
                 <div className="avatarRow">
                   <div className="avatarImage">
-                    <Image
-                      src={card.avatar}
-                      alt={card.author}
-                      fill
-                      className="avatarImg"
-                    />
+                    <Image src={card.avatar} alt={card.author} fill className="avatarImg" />
                   </div>
                   <div>
                     <div className="avatarName">{card.author}</div>
@@ -142,7 +166,7 @@ export default function BlogSection() {
       <style jsx>{`
         .section {
           width: 100%;
-          padding: 120px 0;
+          padding: 40px 0 120px 0;
         }
 
         .container {
@@ -156,6 +180,7 @@ export default function BlogSection() {
           align-items: center;
           gap: 24px;
           margin-bottom: 48px;
+          padding-left: 10px;
         }
 
         .viewAll {
@@ -179,40 +204,38 @@ export default function BlogSection() {
           display: grid;
           grid-template-columns: repeat(3, 370px);
           gap: 40px;
+          justify-content: start;
         }
 
-      .card {
-  width: 370px;
-  height: 549px;
-  border-radius: 15px;
-  box-shadow: 4px 4px 6.6px rgba(0, 0, 0, 0.25);
-   display: flex;
-  flex-direction: column;
-  
-}
+        .card {
+          width: 370px;
+          height: 549px;
+          border-radius: 15px;
+          box-shadow: 4px 4px 6.6px rgba(0, 0, 0, 0.25);
+          display: flex;
+          flex-direction: column;
+        }
 
-.imagePlaceholder {
-  position: relative;
-  width: 375px;
-  height: 300px;
-  border -radius: 10px 10px 0 0;
-}
+        .imagePlaceholder {
+          position: relative;
+          width: 375px;
+          height: 300px;
+          border-radius: 10px 10px 0 0;
+        }
 
-.blogImage {
-  object-fit: contain;
-  object-position: center;
-  
-}
+        .blogImage {
+          object-fit: contain;
+          object-position: center;
+        }
 
-.content {
-  padding: 16px; /* ✅ padding only for content below image */
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  flex-grow: 1;
-  width: 100%;
-}
-
+        .content {
+          padding: 16px;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          flex-grow: 1;
+          width: 100%;
+        }
 
         .cardCategory {
           font-size: 14px;
@@ -220,21 +243,14 @@ export default function BlogSection() {
         }
 
         .title {
-  font-size: 24px;
-  font-weight: 700;
-
-  /* stable line height */
-  line-height: 1.4;
-
-  /* EXACT height for 2 lines */
-  min-height: calc(1.4em * 2);
-
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
+          font-size: 24px;
+          font-weight: 700;
+          line-height: 1.4;
+          min-height: calc(1.4em * 2);
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
         }
 
         .description {

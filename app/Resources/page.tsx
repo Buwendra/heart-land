@@ -1,5 +1,5 @@
 import Navbar from '@/components/Navbar';
-import Footer from '@/components/footer';
+import ResourcesFooter from '@/components/resourcesFooter';
 import BlogAndNews from '@/components/blogAndNews';
 import SuccessStory from '@/components/successStory';
 import LatestNews from '@/components/latestNews';
@@ -12,7 +12,12 @@ export default function Resources() {
     <BlogAndNews />
     <SuccessStory />
     <LatestNews />
-    <BlogCards />  
+    <BlogCards />
+    
+  
+   
+  
+    
     </ >
   );
 }
