@@ -21,13 +21,7 @@ export default function CommunitySection() {
       <div className="grid grid-cols-1 -mt-30 md:grid-cols-2 gap-36 items-center">
 
         {/* IMAGE */}
-        <Image
-  src="/unsplash.png"
-  alt="Community"
-  width={900}        // increased from 750
-  height={800}       // increased from 650
-  className="max-w-[1800px] w-auto h-auto rounded-r-[70px] transition-transform duration-300"
-/>
+        
 
 
         {/* TEXT */}
