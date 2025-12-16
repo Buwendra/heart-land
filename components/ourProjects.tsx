@@ -64,10 +64,10 @@ export default function OurProjects() {
             Training and mentoring small-scale farmers in sustainable agriculture, organic cultivation, and export-ready practices.
           </p>
           <div className="px-4 mt-4">
-            <button className="flex items-center cursor-pointer px-4 py-[9px] bg-[#D12714] text-white rounded-lg text-[12px]">
+            <button className="group flex items-center cursor-pointer px-4 py-[9px] bg-[#D12714] text-white rounded-lg text-[12px] border-2 border-[#D12714] transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-lg hover:-translate-y-1 transform-gpu hover:bg-white hover:text-[#D12714]">
               <span className={`${nunito.className}`}>Read More</span>
-              <span className="flex items-center justify-center w-6 h-6 bg-white rounded-full ml-2">
-                <span className="text-[#D12714] text-xl">↗</span>
+              <span className="flex items-center justify-center w-6 h-6 bg-white rounded-full ml-2 transition-all duration-300 ease-out group-hover:bg-[#D12714]">
+                <span className="text-[#D12714] text-xl transition-all duration-300 ease-out group-hover:text-white">↗</span>
               </span>
             </button>
           </div>
@@ -85,10 +85,10 @@ export default function OurProjects() {
             Providing nutritious meals and health check-ups to children in underserved communities to help them grow strong and healthy.
           </p>
           <div className="px-4 mt-4">
-            <button className="flex items-center cursor-pointer px-4 py-[9px] bg-[#D12714] text-white rounded-lg text-[12px]">
+            <button className="group flex items-center cursor-pointer px-4 py-[9px] bg-[#D12714] text-white rounded-lg text-[12px] border-2 border-[#D12714] transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-lg hover:-translate-y-1 transform-gpu hover:bg-white hover:text-[#D12714]">
               <span className={`${nunito.className}`}>Read More</span>
-              <span className="flex items-center justify-center w-6 h-6 bg-white rounded-full ml-2">
-                <span className="text-[#D12714] text-xl">↗</span>
+              <span className="flex items-center justify-center w-6 h-6 bg-white rounded-full ml-2 transition-all duration-300 ease-out group-hover:bg-[#D12714]">
+                <span className="text-[#D12714] text-xl transition-all duration-300 ease-out group-hover:text-white">↗</span>
               </span>
             </button>
           </div>
@@ -106,10 +106,10 @@ export default function OurProjects() {
             Setting up community libraries and reading clubs to encourage literacy and spark a love for books among children.
           </p>
           <div className="px-4 mt-4">
-            <button className="flex items-center cursor-pointer px-4 py-[9px] bg-[#D12714] text-white rounded-lg text-[12px]">
+            <button className="group flex items-center cursor-pointer px-4 py-[9px] bg-[#D12714] text-white rounded-lg text-[12px] border-2 border-[#D12714] transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-lg hover:-translate-y-1 transform-gpu hover:bg-white hover:text-[#D12714]">
               <span className={`${nunito.className}`}>Read More</span>
-              <span className="flex items-center justify-center w-6 h-6 bg-white rounded-full ml-2">
-                <span className="text-[#D12714] text-xl">↗</span>
+              <span className="flex items-center justify-center w-6 h-6 bg-white rounded-full ml-2 transition-all duration-300 ease-out group-hover:bg-[#D12714]">
+                <span className="text-[#D12714] text-xl transition-all duration-300 ease-out group-hover:text-white">↗</span>
               </span>
             </button>
           </div>
@@ -127,10 +127,10 @@ export default function OurProjects() {
             Installing safe drinking water facilities in schools and villages to promote health and reduce waterborne diseases.
           </p>
           <div className="px-4 mt-4">
-            <button className="flex items-center cursor-pointer px-4 py-[9px] bg-[#D12714] text-white rounded-lg text-[12px]">
+            <button className="group flex items-center cursor-pointer px-4 py-[9px] bg-[#D12714] text-white rounded-lg text-[12px] border-2 border-[#D12714] transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-lg hover:-translate-y-1 transform-gpu hover:bg-white hover:text-[#D12714]">
               <span className={`${nunito.className}`}>Read More</span>
-              <span className="flex items-center justify-center w-6 h-6 bg-white rounded-full ml-2">
-                <span className="text-[#D12714] text-xl">↗</span>
+              <span className="flex items-center justify-center w-6 h-6 bg-white rounded-full ml-2 transition-all duration-300 ease-out group-hover:bg-[#D12714]">
+                <span className="text-[#D12714] text-xl transition-all duration-300 ease-out group-hover:text-white">↗</span>
               </span>
             </button>
           </div>
