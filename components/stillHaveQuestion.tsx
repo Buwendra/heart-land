@@ -40,7 +40,7 @@ export default function HaveQ() {
         {/* CTA */}
         <Link href="/Contact">
           <button
-            className="mt-6 inline-flex items-center cursor-pointer ml-52 justify-center px-9 py-2 rounded-full border border-white text-white font-openSans font-semibold text-[15px] leading-4 tracking-[0.43em] transition-colors duration-200"
+            className="mt-6 inline-flex items-center cursor-pointer ml-52 justify-center px-9 py-2 rounded-full border-2 border-white text-white font-openSans font-semibold text-[15px] leading-4 tracking-[0.43em] transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-lg hover:-translate-y-1 transform-gpu hover:bg-white hover:text-black"
             style={{ textTransform: "uppercase" }}
           >
             CONTACT US
