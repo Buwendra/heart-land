@@ -138,12 +138,18 @@ export default function OurProjects() {
       </div>
 
       {/* Slide Arrows */}
-      <div className="absolute right-40 top-[130px] flex items-center gap-4 px-4">
-        <button className="w-14 h-14 bg-[#D9D9D6] cursor-pointer rounded-full shadow flex items-center justify-center">
-          <span className="text-black text-4xl font-sm">&lsaquo;</span>
+      <div className="absolute right-40 top-[130px] flex items-center gap-5 px-4">
+        <button 
+          className="w-11 h-11 bg-transparent cursor-pointer rounded-full flex items-center justify-center border-0 p-0 transition-all duration-300 ease-out hover:scale-110 hover:-translate-y-0.5 hover:bg-opacity-5 hover:shadow-[0_8px_16px_rgba(0,0,0,0.3)]"
+          aria-label="Scroll left"
+        >
+          <Image src="/leftArrow.png" alt="Left" width={22} height={22} />
         </button>
-        <button className="w-14 h-14 bg-[#D9D9D6] cursor-pointer text-4xl rounded-full shadow flex items-center justify-center">
-          &rsaquo;
+        <button 
+          className="w-11 h-11 bg-transparent cursor-pointer rounded-full flex items-center justify-center border-0 p-0 transition-all duration-300 ease-out hover:scale-110 hover:-translate-y-0.5 hover:bg-opacity-5 hover:shadow-[0_8px_16px_rgba(0,0,0,0.3)]"
+          aria-label="Scroll right"
+        >
+          <Image src="/rightArrow.png" alt="Right" width={22} height={22} />
         </button>
       </div>
     </section>
