@@ -26,27 +26,33 @@ React.useEffect(() => {
 
   return (
     <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-black mb-8">
-            Our Trusted Partners
-          </h2>
+      <div className="max-w-full w-auto ">
+        {/* Full-width Gradient Section */}
+<div className=" bg-gradient-to-b from-[#fcd6d6] to-[#f5585866] py-7">
+  
+  {/* Content */}
+  <div className="text-center -py-10">
+    <h2 className="text-3xl md:text-4xl font-bold text-black mb-8">
+      Our Trusted Partners
+    </h2>
 
-          {/* Partner Logos */}
-          <div className="flex justify-center mb-10">
-            <Image
-              src="/Group 68.png"
-              alt="partners"
-              width={1900}
-              height={1000}
-              className="object-contain  "
-            />
-          </div>
-        </div>
+    <div className="flex justify-center mb-10">
+      <Image
+        src="/Group 68.png"
+        alt="partners"
+        width={1900}
+        height={1000}
+        className="object-contain"
+      />
+    </div>
+  </div>
+
+</div>
+
 
         {/* About Section   */}
-        <div className="ml-15 mb-10">
+        <div className="mx-auto mb-10 mt-32 max-w-[1100px] px-6">
+
           <p className="text-[#6D7D7D] text-sm tracking-widest uppercase mb-3">
             About
           </p>
@@ -66,7 +72,7 @@ React.useEffect(() => {
         </div>
 
         {/* Two-column section */}
-<div className="relative grid ml-14 gap-10 items-start">
+<div className="relative grid mx-auto max-w-[1100px] px-6 gap-10 items-start">
   {/* Left: image group */}
   <div ref={mediumRef} className="relative flex gap-5 -top-30 justify-start">
     {/* Market image */}

@@ -29,7 +29,7 @@ export default function HeroBanner() {
               className="hidden md:block absolute left-10 top-[90px] -translate-y-1/2"
               style={{ width: 220, height: 220, marginLeft: -110 }}
             >
-              <div className="w-[300px] h-[300px] overflow-hidden">
+              <div className="w-[280px] h-[300px] overflow-hidden">
                 <Image
                   src="/left-circle.png"
                   alt="spices circle"
@@ -43,7 +43,7 @@ export default function HeroBanner() {
             {/* Right decorative image with parallax */}
             <div
               ref={chiliRef}
-              className="absolute right-0 -top-30 -translate-y-1/2 pointer-events-none"
+              className="absolute right-0 -top-5 -translate-y-1/2 pointer-events-none"
               style={{ width: 370, height: 370, marginRight: -60 }}
             >
               <Image
