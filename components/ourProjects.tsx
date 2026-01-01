@@ -18,7 +18,7 @@ export default function OurProjects() {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
     
-    // Check if mobile on mount and resize
+ 
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
     window.addEventListener("resize", checkMobile);
@@ -29,12 +29,11 @@ export default function OurProjects() {
     };
   }, []);
 
-  // Adjust parallax multiplier based on device
+ 
   const parallaxMultiplier = isMobile ? 0 : 0.04;
   const parallax = (multiplier: number) => `translateY(${scrollY * multiplier}px)`;
 
-  // Cards data for easier rendering
-  const cards = [
+   const cards = [
     {
       id: 1,
       image: "/proj_farmer.png",
