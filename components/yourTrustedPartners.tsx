@@ -36,13 +36,13 @@ React.useEffect(() => {
       Our Trusted Partners
     </h2>
 
-    <div className="flex justify-center mb-8 md:mb-10 px-4">
+    <div className="flex justify-center mb-8 md:mb-10 px-0 sm:px-2 md:px-4">
       <Image
         src="/Group 68.png"
         alt="partners"
         width={1900}
         height={1000}
-        className="object-contain w-full max-w-[1900px]"
+        className="object-contain w-[120%] sm:w-[110%] md:w-full md:max-w-[1900px]"
       />
     </div>
   </div>
@@ -61,7 +61,7 @@ React.useEffect(() => {
             Your Trusted Partner in Sri Lankan Food Distribution
           </h3>
 
-          <p className="text-gray-700 text-base sm:text-lg md:text-xl mt-5 mb-0 leading-relaxed">
+          <p className="text-gray-700 text-base sm:text-lg md:text-xl mt-5 mb-6 lg:mb-0 leading-relaxed">
             <span className="font-semibold text-black">
               Heartland General Trading Co. LLC
             </span>{" "}
@@ -69,12 +69,66 @@ React.useEffect(() => {
             products in the UAE. Based in Dubai, we connect authentic Sri Lankan
             flavors with global markets through trusted partnerships and modern logistics.
           </p>
+
+          {/* Read More button - Mobile only */}
+          <div className="flex justify-center lg:hidden mt-8 mb-10">
+            <Link href="/About">
+              <button
+                type="button"
+                className="bg-[#D11417] text-white cursor-pointer px-9 py-4 rounded-full font-semibold border-2 border-[#D11417] transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-lg hover:-translate-y-1 transform-gpu hover:bg-white hover:text-[#D11417]"
+              >
+                Read More
+              </button>
+            </Link>
+          </div>
+
+          {/* Stats section - Mobile */}
+          <div className="flex lg:hidden flex-wrap justify-center gap-8 sm:gap-12 md:gap-16 px-6 mb-10">
+            {/* 15+ Years Expertise */}
+            <div className="text-center">
+              <h4 className="font-normal text-[32px] sm:text-[40px] leading-tight text-black mb-2">
+                15+
+              </h4>
+              <p className="font-semibold text-[9px] sm:text-[10px] leading-tight uppercase text-black tracking-[0.2em] whitespace-nowrap">
+                YEARS
+              </p>
+              <p className="font-semibold text-[9px] sm:text-[10px] leading-tight uppercase text-black tracking-[0.2em] whitespace-nowrap">
+                EXPERTISE
+              </p>
+            </div>
+
+            {/* 30+ Partner Brands */}
+            <div className="text-center">
+              <h4 className="font-normal text-[32px] sm:text-[40px] leading-tight text-black mb-2">
+                30+
+              </h4>
+              <p className="font-semibold text-[9px] sm:text-[10px] leading-tight uppercase text-black tracking-[0.2em] whitespace-nowrap">
+                PARTNER
+              </p>
+              <p className="font-semibold text-[9px] sm:text-[10px] leading-tight uppercase text-black tracking-[0.2em] whitespace-nowrap">
+                BRANDS
+              </p>
+            </div>
+
+            {/* 1000+ Happy Clients */}
+            <div className="text-center">
+              <h4 className="font-normal text-[32px] sm:text-[40px] leading-tight text-black mb-2">
+                1000+
+              </h4>
+              <p className="font-semibold text-[9px] sm:text-[10px] leading-tight uppercase text-black tracking-[0.2em] whitespace-nowrap">
+                HAPPY
+              </p>
+              <p className="font-semibold text-[9px] sm:text-[10px] leading-tight uppercase text-black tracking-[0.2em] whitespace-nowrap">
+                CLIENTS
+              </p>
+            </div>
+          </div>
         </div>
 
-        {/* Two-column section */}
-<div className="relative mx-auto max-w-[1100px] px-6">
+        {/* Two-column section - Desktop only */}
+<div className="relative mx-auto max-w-[1100px] px-6 hidden lg:block">
   {/* Left: image group */}
-  <div ref={slowRef} className="relative hidden lg:flex flex-wrap lg:flex-nowrap gap-2 sm:gap-3 md:gap-4 lg:gap-5 justify-center lg:justify-start mb-8 lg:mb-0">
+  <div ref={slowRef} className="relative flex flex-wrap lg:flex-nowrap gap-2 sm:gap-3 md:gap-4 lg:gap-5 justify-center lg:justify-start mb-8 lg:mb-0">
     {/* Market image */}
     <div className="w-[90px] sm:w-[120px] md:w-[180px] lg:w-[230px] h-[160px] sm:h-[220px] md:h-[320px] lg:h-[420px] overflow-hidden">
       <Image
@@ -109,7 +163,7 @@ React.useEffect(() => {
     </div>
   </div>
 
-  {/* Right: Read More button */}
+  {/* Right: Read More button - Desktop */}
   <div className="flex justify-center lg:absolute lg:top-48 lg:right-10 mt-8 lg:mt-0">
     <Link href="/About">
       <button
@@ -121,7 +175,7 @@ React.useEffect(() => {
     </Link>
   </div>
 
-  {/* Stats section */}
+  {/* Stats section - Desktop */}
 <div className="relative lg:absolute lg:top-[400px] lg:right-0 w-full lg:max-w-[700px] flex flex-wrap justify-center lg:justify-end gap-8 sm:gap-12 lg:gap-16 px-6 mt-8 lg:mt-0">
 
   {/* 15+ Years Expertise */}
