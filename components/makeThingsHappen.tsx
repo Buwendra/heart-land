@@ -62,7 +62,7 @@ export default function HeroBanner() {
                 className="font-openSans font-bold text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] leading-8 sm:leading-9 md:leading-10 text-white"
                 style={{ maxWidth: 800 }}
               >
-                Let's make things happen
+                Let&apos;s make things happen
               </h1>
 
               {/* Paragraph */}
