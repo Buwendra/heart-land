@@ -15,6 +15,7 @@ export default function Testimonials() {
   const desktopContainerRef = useRef<HTMLDivElement | null>(null);
   const bgRef = useRef<HTMLDivElement | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const scrollToIndex = (index: number) => {
     // Check which container is visible
@@ -101,11 +102,14 @@ export default function Testimonials() {
             </p>
           </div>
 
-          
+
           <div className="max-w-[360px] mx-auto px-2">
             {/* Profile Image - Positioned Above Card */}
             <div className="flex justify-center mb-[-35px] relative z-20">
-              <div className="w-[65px] h-[65px] rounded-full overflow-hidden shadow-lg bg-white">
+              <div
+                key={`image-${activeIndex}`}
+                className="w-[65px] h-[65px] rounded-full overflow-hidden shadow-lg bg-white animate-[fadeIn_0.5s_ease-in-out]"
+              >
                 <Image
                   src={testimonials[activeIndex].image}
                   alt={testimonials[activeIndex].name}
@@ -118,7 +122,8 @@ export default function Testimonials() {
 
             {/* Testimonial Card */}
             <div
-              className="relative bg-white shadow-lg p-5 pt-12"
+              key={`card-${activeIndex}`}
+              className="relative bg-white shadow-lg p-5 pt-12 animate-[fadeIn_0.5s_ease-in-out]"
               style={{
                 borderTopLeftRadius: "100px",
                 borderBottomRightRadius: "100px",
@@ -147,7 +152,11 @@ export default function Testimonials() {
               {testimonials.map((_, idx) => (
                 <button
                   key={idx}
-                  onClick={() => setActiveIndex(idx)}
+                  onClick={() => {
+                    setIsTransitioning(true);
+                    setActiveIndex(idx);
+                    setTimeout(() => setIsTransitioning(false), 500);
+                  }}
                   aria-label={`Go to slide ${idx + 1}`}
                   className={`w-[4px] h-[4px] rounded-full cursor-pointer transition-all ${
                     idx === activeIndex ? "bg-[#D11417]" : "bg-[#D1D5DB]"
@@ -156,6 +165,19 @@ export default function Testimonials() {
               ))}
             </div>
           </div>
+
+          <style jsx>{`
+            @keyframes fadeIn {
+              0% {
+                opacity: 0;
+                transform: translateX(20px);
+              }
+              100% {
+                opacity: 1;
+                transform: translateX(0);
+              }
+            }
+          `}</style>
         </div>
 
         {/* Desktop Layout - Horizontal Scroll */}
