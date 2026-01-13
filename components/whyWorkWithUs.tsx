@@ -78,9 +78,10 @@ useEffect(() => {
           variants={fadeIn}
           className="p-6 sm:p-8 bg-gray-100 md:bg-white shadow-lg rounded-2xl border border-gray-100 hover:shadow-2xl transition-shadow"
         >
-          <div className="relative flex items-center">
-            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#D11417] absolute inset-y-0 left-0 my-auto"></div>
-            <span className="relative text-white text-[24px] sm:text-4xl font-inter font-bold ml-2">01</span>
+          <div className="relative flex items-center justify-start h-14">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#D11417] flex items-center justify-center">
+              <span className="text-white text-[24px] sm:text-4xl font-inter font-bold">01</span>
+            </div>
           </div>
 
           <h3 className={`${openSans.className} font-semibold text-[#071440] text-[18px] sm:text-lg mb-2 mt-5`}>
@@ -103,9 +104,10 @@ useEffect(() => {
           variants={fadeIn}
           className="p-6 sm:p-8 bg-gray-100 md:bg-white shadow-lg rounded-2xl border border-gray-100 hover:shadow-2xl transition-shadow"
         >
-          <div className="relative flex items-center">
-            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#D11417] absolute inset-y-0 left-0 my-auto"></div>
-            <span className="relative text-white text-[24px] sm:text-4xl font-bold font-inter ml-2">02</span>
+          <div className="relative flex items-center justify-start h-14">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#D11417] flex items-center justify-center">
+              <span className="text-white text-[24px] sm:text-4xl font-bold font-inter">02</span>
+            </div>
           </div>
 
           <h3 className={`${openSans.className} font-semibold text-[#071440] text-[18px] sm:text-lg mt-5 mb-2`}>
@@ -128,9 +130,10 @@ useEffect(() => {
           variants={fadeIn}
           className="p-6 sm:p-8 bg-gray-100 md:bg-white shadow-lg rounded-2xl border border-gray-100 hover:shadow-2xl transition-shadow"
         >
-          <div className="relative flex items-center">
-            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#D11417] absolute inset-y-0 left-0 my-auto"></div>
-            <span className="relative text-white text-[24px] sm:text-4xl font-bold font-inter ml-2">03</span>
+          <div className="relative flex items-center justify-start h-14">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#D11417] flex items-center justify-center">
+              <span className="text-white text-[24px] sm:text-4xl font-bold font-inter">03</span>
+            </div>
           </div>
 
           <h3 className={`${openSans.className} font-semibold text-[#071440] text-[18px] sm:text-lg mt-5 mb-2`}>
