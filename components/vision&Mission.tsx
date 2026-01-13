@@ -1,28 +1,62 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 export default function VisionMission() {
-  const visionRef = useRef(null);
-  const missionRef = useRef(null);
+  const visionRef = useRef<HTMLDivElement>(null);
+  const missionRef = useRef<HTMLDivElement>(null);
+  const [visionVisible, setVisionVisible] = useState(false);
+  const [missionVisible, setMissionVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
+
+      // Check if elements are in viewport
+      if (visionRef.current) {
+        const visionRect = visionRef.current.getBoundingClientRect();
+        const visionInView = visionRect.top < window.innerHeight * 0.8 && visionRect.bottom > 0;
+        if (visionInView && !visionVisible) {
+          setVisionVisible(true);
+        }
+      }
+
+      if (missionRef.current) {
+        const missionRect = missionRef.current.getBoundingClientRect();
+        const missionInView = missionRect.top < window.innerHeight * 0.8 && missionRect.bottom > 0;
+        if (missionInView && !missionVisible) {
+          setMissionVisible(true);
+        }
+      }
     };
+
+    handleScroll(); // Check on mount
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [visionVisible, missionVisible]);
 
   return (
-    <section className="py-36 bg-white">
-      <div>
+    <section className="pt-0 pb-12 sm:py-16 md:py-24 lg:py-36 bg-white">
+      {/* Image - Mobile Only  */}
+      <div className="md:hidden mt-2 mb-10">
+        <Image
+          src="/Group 1171275026.png"
+          alt="Vision Mission Icon"
+          width={400}
+          height={300}
+          className="w-full h-auto"
+        />
+      </div>
+
+      <div className="px-4 sm:px-6 md:px-8">
         {/* Heading */}
-        <div className="text-center space-y-6 leading-8 mb-8 mx-auto font-nunito">
-          <h2 className="text-2xl md:text-5xl font-bold text-gray-900 transition-transform duration-500 hover:scale-[1.02]">
+        <div className="text-center space-y-4 md:space-y-6 leading-6 md:leading-8 mb-8 md:mb-12 mx-auto font-nunito">
+
+          <h2 className="text-[18px] sm:text-2xl md:text-4xl lg:text-5xl font-semibold text-gray-900 transition-transform duration-500 hover:scale-[1.02] px-4 font-nunito">
             Our Identity Vision and Mission
           </h2>
 
-          <p className="mt-4 font-medium md:text-xl text-black max-w-4xl mx-auto leading-relaxed">
+          <p className="mt-4 font-medium text-[14px] sm:text-lg md:text-xl text-black max-w-4xl mx-auto leading-6.5 px-4 font-nunito">
             We are dedicated to redefining the way Sri Lankan food products reach
             international markets. With a focus on quality, authenticity, and
             trust, we aim to represent the rich heritage of Sri Lankan flavors
@@ -31,41 +65,87 @@ export default function VisionMission() {
         </div>
 
         {/* Cards */}
-        <div className="space-y-12 max-w-4xl mx-auto">
+        <div className="space-y-8 sm:space-y-10 md:space-y-12 max-w-4xl md:mx-auto">
 
-          {/* Card 1 */}
+          {/* Card 1 - Vision */}
           <div
             ref={visionRef}
-            className="relative transition-transform duration-700 ease-out will-change-transform"
+            className="relative transition-transform duration-700 ease-out will-change-transform md:max-w-3xl"
           >
             <div
-              className="absolute right-24 top-1/2 -translate-y-1/2 bg-[#D11417] rounded-full"
+              className="absolute right-4 sm:-right-8 md:-right-8 lg:-right-9 top-1/2 -translate-y-1/2 bg-[#D11417] rounded-full hidden md:block"
               style={{ width: 20, height: 180 }}
             />
-            <div className="bg-[#EBEBEB] rounded-2xl p-6 w-3xl md:p-8 pl-12 md:pl-20 shadow-sm hover:scale-[1.01] hover:shadow-lg transition-all duration-500">
-              <h3 className="text-3xl font-semibold text-[#D11417] mb-2">
+
+            {/* Mobile Layout */}
+            <div className="md:hidden flex items-center gap-4 -mr-8">
+              <h3
+                className={`text-[36px] font-bold shrink-0 mx-5 leading-[42px] transition-all duration-700 ${
+                  visionVisible ? 'opacity-100' : 'opacity-0'
+                }`}
+                style={{ fontFamily: 'Open Sans' }}
+              >
+                Our <br/>Vision
+              </h3>
+              <div
+                className={`bg-[#B10003] rounded-l-2xl pl-5 pr-4 py-5 flex-1 shadow-sm transition-all duration-700 ${
+                  visionVisible ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
+                }`}
+              >
+                <p className="text-[12px] text-white leading-relaxed italic" style={{ fontFamily: 'Nunito' }}>
+                  To deliver high-quality local food products from Sri Lanka to the United Arab Emirates through reliable and efficient distribution.
+                </p>
+              </div>
+            </div>
+
+            {/* Desktop Layout */}
+            <div className="hidden md:block bg-[#EBEBEB] rounded-2xl p-5 sm:p-6 md:p-8 pl-6 sm:pl-8 md:pl-12 lg:pl-20 pr-4 sm:pr-6 shadow-sm hover:scale-[1.01] hover:shadow-lg transition-all duration-500">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#D11417] mb-2">
                 Our Vision
               </h3>
-              <p className="text-xl text-black leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-black leading-relaxed">
                 To deliver high-quality local food products from Sri Lanka to the United Arab Emirates through reliable and efficient distribution.
               </p>
             </div>
           </div>
 
-          {/* Card 2 */}
+          {/* Card 2 - Mission */}
           <div
             ref={missionRef}
-            className="relative md:ml-24 transition-transform duration-700 ease-out will-change-transform"
+            className="relative transition-transform duration-700 ease-out will-change-transform md:max-w-3xl md:ml-auto"
           >
             <div
-              className="absolute -left-9 top-1/2 -translate-y-1/2 bg-[#D11417] rounded-full"
+              className="absolute -left-2 sm:-left-8 md:-left-8 lg:-left-9 top-1/2 -translate-y-1/2 bg-[#D11417] rounded-full hidden md:block"
               style={{ width: 20, height: 180 }}
             />
-            <div className="bg-[#EBEBEB] rounded-2xl w-3xl p-6 md:p-8 pl-12 md:pl-8 md:pr-17 shadow-sm hover:scale-[1.01] hover:shadow-lg transition-all duration-500">
-              <h3 className="text-3xl font-semibold text-[#D11417] mb-2 text-right">
+
+            {/* Mobile Layout */}
+            <div className="md:hidden flex items-center gap-4 -ml-8">
+              <div
+                className={`bg-[#B10003] rounded-r-2xl pl-4 pr-5 py-5 flex-1 shadow-sm transition-all duration-700 ${
+                  missionVisible ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'
+                }`}
+              >
+                <p className="text-[12px] text-white leading-relaxed italic text-right" style={{ fontFamily: 'Nunito' }}>
+                  To be the leading supplier of diverse and niche local food products from Sri Lanka in the United Arab Emirates.
+                </p>
+              </div>
+              <h3
+                className={`text-[36px] font-bold text-right shrink-0 mx-5 leading-[42px] transition-all duration-700 ${
+                  missionVisible ? 'opacity-100' : 'opacity-0'
+                }`}
+                style={{ fontFamily: 'Open Sans' }}
+              >
+                Our<br/>Mission
+              </h3>
+            </div>
+
+            {/* Desktop Layout */}
+            <div className="hidden md:block bg-[#EBEBEB] rounded-2xl p-5 sm:p-6 md:p-8 pl-4 sm:pl-6 pr-6 sm:pr-8 md:pr-12 lg:pr-17 shadow-sm hover:scale-[1.01] hover:shadow-lg transition-all duration-500">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#D11417] mb-2 text-right">
                 Our Mission
               </h3>
-              <p className="text-xl text-black leading-relaxed text-right">
+              <p className="text-base sm:text-lg md:text-xl text-black leading-relaxed text-right">
                 To be the leading supplier of diverse and niche local food products from Sri Lanka in the United Arab Emirates.
               </p>
             </div>
