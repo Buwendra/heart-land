@@ -322,7 +322,7 @@ if (query.trim()) {
 
 
           {/* grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-6 px-8 md:px-0">
             {paginated.length === 0 ? (
               <div className="col-span-full text-center text-gray-500 py-20">No products found.</div>
             ) : (
@@ -332,39 +332,46 @@ if (query.trim()) {
                 className="bg-white rounded-xl shadow-sm p-2 md:p-0 hover:shadow-lg transition-shadow duration-200"
 >
 
-                  <div
+  <div
   className="
     rounded-2xl overflow-hidden mb-3
-    flex items-center justify-center
-    w-[75%] mx-auto
+    flex items-center justify-center 
+    w-[85%] mx-auto
     h-[250px]
-    md:w-full md:h-[350px] md:bg-black bg-white
+    bg-white
+    md:w-full md:h-[350px] md:bg-black
   "
 >
+  <div
+    className="
+      relative w-full
+      h-[200px] md:h-[350px]
+      rounded-2xl overflow-hidden
+      flex items-center justify-center
+      bg-white md:bg-black
+    "
+  >
+    <Image
+      src={p.image}
+      alt={p.title}
+      fill
+      className="object-contain transition-transform duration-300 hover:scale-105"
+    />
+  </div>
+</div>
 
 
-                    <div className="relative w-full h-[350px] rounded-2xl overflow-hidden mb-3 bg-black flex items-center justify-center">
-                    <div className="relative w-full h-[200px] md:h-[350px]">
-                    <Image
-                       src={p.image}
-                      alt={p.title}
-                      fill
-                      className="object-contain transition-transform duration-300 transform hover:scale-105"
-                     />
-                  </div></div>
+  {!showImageOnly ? (
+  <div className="bg-gray-100 rounded-b-xl p-4">
+    <div className="flex items-center justify-between mb-2">
+      <h4 className="font-semibold text-sm">{p.title}</h4>
+    </div>
+    <div className="text-3xl font-bold">${p.price}</div>
+  </div>
+) : (
+  <div className="h-0 m-0 p-0"></div>
+)}
 
-                  </div>
-
-                  {!showImageOnly ? (
-                    <>
-                      <div className="flex items-center mt-5 ml-5 justify-between mb-2">
-                        <h4 className="font-semibold text-sm">{p.title}</h4>
-                      </div>
-                      <div className="text-3xl ml-5 mb-5 font-bold">${p.price}</div>
-                    </>
-                  ) : (
-                    <div className="h-0 m-0 p-0"></div>
-                  )}
                 </article>
               ))
             )}
