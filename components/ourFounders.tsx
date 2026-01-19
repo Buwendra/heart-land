@@ -11,7 +11,41 @@ const openSans = Open_Sans({ subsets: ["latin"], variable: "--font-open-sans" })
 export default function Founders() {
   const [mounted, setMounted] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const cardsRef = useRef<Array<HTMLDivElement | null>>([]);
+
+  // Minimum swipe distance (in px)
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe && currentSlide < founders.length - 1) {
+      setCurrentSlide(currentSlide + 1);
+    }
+    if (isRightSwipe && currentSlide > 0) {
+      setCurrentSlide(currentSlide - 1);
+    }
+  };
+
+  const founders = [
+    { name: "Mr. Aravinda Perera", title: "Founder and Chairman", img: "/founder 1.png" },
+    { name: "Ms. Dulani Fernando", title: "Co-Founder & Director of Operations", img: "/founder 2.png" },
+    { name: "Mr. Nuwan Jayasuriya", title: "HR Manager", img: "/founder 3.png" },
+  ];
 
   useEffect(() => {
   const timer = setTimeout(() => setMounted(true), 0);
@@ -33,14 +67,6 @@ export default function Founders() {
     window.removeEventListener("scroll", handleScroll);
   };
 }, []);
-
-
- 
-  const founders = [
-    { name: "Mr. Aravinda Perera", title: "Founder and Chairman", img: "/founder 1.png" },
-    { name: "Ms. Dulani Fernando", title: "Co-Founder & Director of Operations", img: "/founder 2.png" },
-    { name: "Mr. Nuwan Jayasuriya", title: "HR Manager", img: "/founder 3.png" },
-  ];
 
   const setCardRef = (el: HTMLDivElement | null, index: number) => {
     cardsRef.current[index] = el;
@@ -125,14 +151,19 @@ export default function Founders() {
         >
           <div className="w-[286px] relative">
             {/* Slider Container */}
-            <div className="overflow-hidden">
+            <div
+              className="overflow-hidden"
+              onTouchStart={onTouchStart}
+              onTouchMove={onTouchMove}
+              onTouchEnd={onTouchEnd}
+            >
               <div
                 className="flex transition-transform duration-500 ease-out"
                 style={{ transform: `translateX(-${currentSlide * 100}%)` }}
               >
                 {founders.map((founder, index) => (
-                  <div key={index} className="w-full flex-shrink-0">
-                    <div className="relative overflow-hidden bg-black">
+                  <div key={index} className="w-[286px] flex-shrink-0">
+                    <div className="relative overflow-hidden bg-black w-[286px]">
                       {/* Image Container */}
                       <div className="h-[381px] w-[286px] overflow-hidden relative rounded-2xl">
                         <Image
@@ -140,7 +171,7 @@ export default function Founders() {
                           alt={founder.name}
                           fill
                           sizes="286px"
-                          className="object-cover"
+                          className="object-cover object-top"
                           priority={index === 0}
                         />
                       </div>
@@ -150,7 +181,7 @@ export default function Founders() {
                         <h3 className={`${openSans.className} font-bold text-[16px] text-[#000000] mb-1`}>
                           {founder.name}
                         </h3>
-                        <p className={`${openSans.className} text-[14px] text-red-600`}>
+                        <p className={`${openSans.className} text-[12px] text-red-600`}>
                           {founder.title}
                         </p>
                       </div>
