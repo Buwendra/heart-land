@@ -13,11 +13,8 @@ export default function Resources() {
     <SuccessStory />
     <LatestNews />
     <BlogCards />
-    
-  
-   
-  
-    
     </ >
+
+    
   );
 }
