@@ -68,7 +68,7 @@ useEffect(() => {
       </motion.div>
 
       {/* Cards Section */}
-      <div className="flex flex-col md:grid md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto px-4 sm:px-6 pb-12 md:pb-20">
+      <div className="flex flex-col md:grid md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto px-4 sm:px-6 pb-0 md:pb-20">
         {/* CARD 1 */}
         <motion.div
           style={{ y: y1 }}
