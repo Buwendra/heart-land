@@ -59,7 +59,7 @@ export default function CommunitySection() {
       </section>
 
       {/* Mobile Layout */}
-      <section className={`md:hidden w-full py-12 bg-[#F5F5F5] ${openSans.className}`}>
+      <section className={`md:hidden w-full py-8 bg-[#F5F5F5] ${openSans.className}`}>
         <div className="flex flex-col items-center text-center px-6">
 
           {/* Heading */}
@@ -75,7 +75,7 @@ export default function CommunitySection() {
           {/* Button */}
           <Link href="/About">
             <button
-              className={`${nunito.className} cursor-pointer px-8 py-3 text-base font-bold border-2 border-[#E60012]
+              className={`${nunito.className} cursor-pointer px-6 py-1 text-base font-bold border-2 border-[#E60012]
               text-[#E60012] bg-white rounded-full transition-all duration-300 ease-out hover:bg-[#E60012] hover:text-white hover:shadow-lg`}
             >
               Partner with Us
