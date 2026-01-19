@@ -21,15 +21,15 @@ export default function JoinWithUs() {
       {/* Desktop Layout */}
       <section
         aria-label="Join With Us"
-        className="hidden md:flex relative w-full overflow-hidden h-[580px] lg:h-[663px] items-center justify-center"
+        className="hidden md:flex relative w-full overflow-hidden h-auto lg:h-[663px] items-center justify-center"
       >
         {/* Background Image Layer */}
         <div
-          className="absolute w-full h-[200%] -top-[90%]"
+          className="absolute w-full h-[200%] -top-[130%]"
           style={{
             backgroundImage: `url("${bgPath}")`,
-            backgroundSize: "120%",
-            backgroundPosition: "center 10%",
+            backgroundSize: "100%",
+            backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
             transform: `translateY(${offset}px)`,
             transition: "transform 0.1s linear",
