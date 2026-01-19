@@ -30,6 +30,8 @@ export default function TeamMembers() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [mounted, setMounted] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
   const { scrollY } = useScroll();
   const slowParallax = useTransform(scrollY, [0, 1000], [0, -30]);
@@ -40,6 +42,32 @@ export default function TeamMembers() {
 
   const scrollRight = () => {
     if (scrollRef.current) scrollRef.current.scrollBy({ left: 300, behavior: "smooth" });
+  };
+
+  // Minimum swipe distance (in px)
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe && currentSlide < mobileTeam.length - 1) {
+      setCurrentSlide(currentSlide + 1);
+    }
+    if (isRightSwipe && currentSlide > 0) {
+      setCurrentSlide(currentSlide - 1);
+    }
   };
 
   useEffect(() => {
@@ -190,7 +218,12 @@ export default function TeamMembers() {
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
           className="relative w-full"
         >
-          <div className="overflow-hidden">
+          <div
+            className="overflow-hidden"
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+          >
             <div
               className="flex transition-transform duration-500 ease-out gap-8"
               style={{
