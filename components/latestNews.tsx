@@ -42,25 +42,31 @@ export default function LatestNews() {
 
         {/* Card with parallax effect */}
         <div
-          className="flex border border-[#DDDDDD] rounded-[30px] shadow-[4px_4px_8.8px_0px_rgba(0,0,0,0.25)] overflow-hidden mx-auto"
-          style={{
-            width: "1182px",
-            height: "480px",
-            transform: `translateY(-${offsetY > maxShift ? maxShift : offsetY}px)`,
-          }}
-        >
+          
+  className="flex flex-col md:flex-row border border-[#DDDDDD] rounded-[20px] md:rounded-[30px] shadow-[4px_4px_8.8px_0px_rgba(0,0,0,0.25)] overflow-hidden mx-auto w-[92%] md:w-full md:h-[480px]"
+  style={{
+    maxWidth: "1182px",
+    transform: `translateY(-${offsetY > maxShift ? maxShift : offsetY}px)`,
+  }}
+>
+
+        
           {/* Left Image */}
-          <div className="relative w-1/2 h-[500px] rounded-[20px] overflow-hidden flex items-center justify-center">
-            <Image
-              src="/PlaceholderImage.png"
-              alt="Blog Post Image"
-              fill
-              className="object-cover rounded-l-[30px] rounded-br-[50px]"
-            />
-          </div>
+          <div className="w-full md:w-1/2 order-2 md:order-1">
+  <Image
+    src="/PlaceholderImage.png"
+    alt="Blog Post Image"
+    width={301}
+    height={500}
+    className="w-full h-auto object-contain md:object-cover md:rounded-l-[30px] md:rounded-br-[50px]"
+  />
+</div>
+
+
 
           {/* Right Content */}
-          <div className="p-[48px] flex flex-col justify-between w-1/2 h-full">
+         <div className="p-[16px] md:p-[48px] flex flex-col w-full md:w-1/2 order-1 md:order-2">
+
             <div>
               <p className={`${roboto.className} font-semibold text-[14px] mb-[20px]`}>All</p>
               <h3 className={`${nunito.className} font-bold text-[32px] leading-[130%] mb-[30px]`}>
@@ -72,7 +78,8 @@ export default function LatestNews() {
             </div>
 
             {/* Avatar section */}
-            <div className="flex items-center gap-[16px] mt-[40px]">
+<div className="flex items-center gap-[12px] mt-[18px] md:mt-auto">
+
               <div className="w-[48px] h-[48px] rounded-[25px] bg-gray-300 overflow-hidden relative">
                 <Image
                   src="/blogAvatar.png"

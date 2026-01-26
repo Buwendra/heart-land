@@ -104,6 +104,7 @@ export default function BlogSection() {
   return (
     <section className={`section ${roboto.className}`}>
       <div className="container">
+        
         {/* Categories */}
         <div className="categories">
           <button className="viewAll" onClick={() => setSelectedCategory("All")}>
@@ -162,6 +163,14 @@ export default function BlogSection() {
           ))}
         </div>
       </div>
+      <div className="mobileViewMore">
+           <button
+    type="button"          // ✅ ADD THIS LINE
+    className="mobileViewMoreBtn"
+  >
+    View More
+  </button>
+        </div>
 
       <style jsx>{`
         .section {
@@ -496,6 +505,63 @@ export default function BlogSection() {
             font-size: 14px;
           }
         }
+          /* ================= MOBILE VIEW MORE ================= */
+
+/* Hidden by default (desktop/tablet) */
+.mobileViewMore {
+  display: none;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.mobileViewMoreBtn {
+  background: transparent;
+  color: #e10600;
+  border: none;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  font-family: "Open Sans", sans-serif; /* ✅ NEW */
+}
+
+/* underline */
+.mobileViewMoreBtn::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #e10600;
+  margin-top: -20 px;
+}
+
+/* subtle interaction feedback */
+.mobileViewMoreBtn:hover {
+  opacity: 0.85;
+}
+
+.mobileViewMoreBtn:active {
+  transform: translateY(1px);
+}
+
+
+/* Mobile behavior ONLY */
+@media (max-width: 640px) {
+  .categories {
+    display: none;
+  }
+
+  .grid {
+    display: none;
+  }
+
+  .mobileViewMore {
+    display: flex;
+  }
+}
+
+
       `}</style>
     </section>
   );
