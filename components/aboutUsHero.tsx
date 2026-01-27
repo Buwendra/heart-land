@@ -142,7 +142,7 @@ useEffect(() => {
     rounded-lg
     -ml-8 md:-ml-10 lg:-ml-14
     -mb-2 md:-mb-3
-    w-[180px] sm:w-[220px] md:w-[220px] lg:w-[240px]
+    w-[180px] sm:w-[220px] md:w-[220px] lg:w-60
     h-auto
   "
 />
