@@ -11,29 +11,29 @@ export default function Faq() {
 
   const faqs = [
     {
-      question: "Do you deliver across the UAE?",
+      question: "What types of products do you offer?",
       answer:
-        "Yes, we provide nationwide delivery across all seven emirates in the UAE. Our efficient logistics network ensures that products are transported safely and arrive fresh. Whether you’re in Dubai, Abu Dhabi, or other regions, we guarantee timely and reliable delivery right to your doorstep.",
+        "We bring the vibrant flavors of Sri Lanka to your kitchen. Our range includes authentic spices, premium rice, noodles, traditional snacks, condiments, and much more all carefully selected to honor Sri Lanka’s rich culinary heritage.",
     },
     {
-      question: "What payment method do you accept?",
+      question: "How do you ensure the quality of your products?",
       answer:
-        "We accept all major credit/debit cards, online payments, and cash on delivery for select regions.",
+        "Authenticity, quality, and freshness are our top priorities. We source directly from local farmers and trusted suppliers in Sri Lanka. By combining traditional sourcing with modern technology and international standards for processing and packing, we ensure every product reaches you in perfect condition.",
     },
     {
-      question: "How long does delivery take?",
+      question: "Where can I find Heartland products?",
       answer:
-        "Delivery typically takes 2–3 business days within major cities and up to 5 days for remote areas.",
+        "You can find our products across the UAE at many of your favorite hypermarket and supermarket chains, as well as local grocery stores and Sri Lankan restaurants.",
     },
     {
-      question: "Do you deliver across the UAE?",
+      question: "Can I order online or in bulk?",
       answer:
-        "Yes, we deliver across all emirates with reliable and fast logistics support.",
+        "Wholesale and bulk orders can be placed directly through our website or by contacting our customer service team. Exciting news: We are currently launching our e-commerce platform, so soon you’ll be able to have your favorite Sri Lankan staples delivered straight to your door!",
     },
     {
-      question: "What is your return policy?",
+      question: "What shipping options do you provide?",
       answer:
-        "If you receive a damaged or incorrect product, please contact us within 48 hours for a replacement or refund.",
+        "We offer a variety of shipping options to suit your needs, including both standard and expedited delivery services across the UAE.",
     },
   ];
 

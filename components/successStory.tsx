@@ -30,28 +30,28 @@ const cards: Card[] = [
     date: "Aug 10, 2025",
     title: "Seeds of Change: Farmers Growing Beyond Boundaries",
     description:
-      "Discover how smallholder farmers in Sri Lanka are transforming their livelihoods through Heartland’s sustainable agriculture training and fair-trade partnerships. These stories showcase resilience, innovation, and pride in every harvest.",
+      "At Heartland General Trading, our mission goes far beyond distributing authentic Sri Lankan flavors; it is rooted in a deep commitment to making a lasting impact on the lives of our people. We are proud to introduce our dedicated CSR initiative, ‘Heartland ♥ Homeland,’ a long-term pledge to support the fight against cancer in Sri Lanka. Business with a Soul As a core part of this initiative, Heartland allocates a percentage of our annual profits to support vital cancer-related projects and treatment facilities across the island. We view this not as a one-time gesture, but as a serious, sustained responsibility to our homeland.",
   },
   {
     image: "/Frame 61 (3).png",
     date: "Aug 10, 2025",
     title: "Women Leading the Way in Food Enterprise",
     description:
-      "Meet the women redefining Sri Lanka’s food industry — from homegrown spice producers to export-ready entrepreneurs. Heartland’s mentoring and micro-support programs are helping them achieve financial independence and global recognition.",
+      "As a leading distributor of Sri Lankan food products in the UAE, we recognize the vital role that small and medium-scale entrepreneurs play in preserving the rich culinary heritage of our homeland . That's why we've made it our mission to assist these dedicated farmers by facilitating the marketing of their products in Dubai.",
   },
   {
     image: "/Frame 62.png",
     date: "Aug 10, 2025",
     title: "From Local Fields to Global Shelves",
     description:
-      "Follow the journey of Sri Lankan produce as it reaches international markets through ethical sourcing and transparent trade practices. Heartland’s supply chain connects community farmers directly with UAE consumers, ensuring fairness at every step.",
+      "At Heartland General Trading, we celebrate the incredible contributions of women in the food industry, particularly those who are redefining the landscape of food enterprises in Sri Lanka. From farmers to entrepreneurs, women are taking the lead, fostering innovation and resilience while preserving the rich culinary traditions of our homeland.",
   },
   {
     image: "/Frame 63.png",
     date: "Aug 10, 2025",
     title: "Sustainability in Action: Protecting Tomorrow’s Resources",
     description:
-      "Learn how Heartland is introducing eco-friendly packaging, water conservation systems, and waste-free logistics to make food exports more sustainable for future generations.",
+      "Heartland General Trading has been a pioneer in the distribution of Sri Lankan food products since its establishment. With over 2 decades of experience, we have built a strong reputation for quality and authenticity, ensuring that every product reflects the rich culinary heritage of Sri Lanka. Our extensive network of suppliers and partnerships with local farmers allow us to source the highest quality ingredients. This commitment to excellence has made us the trusted choice for customers seeking genuine Sri Lankan flavors.",
   },
 ];
 
@@ -229,7 +229,7 @@ export default function BlogsSuccessStory() {
                   <p
                     style={{
                       fontFamily: "var(--font-open-sans)",
-                      fontSize: "16px",
+                      fontSize: "14px",
                       lineHeight: "160%",
                       color: "#6D6D6D",
                     }}
@@ -338,7 +338,7 @@ export default function BlogsSuccessStory() {
                       <p
                         style={{
                           fontFamily: "var(--font-open-sans)",
-                          fontSize: "16px",
+                          fontSize: "13px",
                           lineHeight: "160%",
                           color: "#6D6D6D",
                         }}
