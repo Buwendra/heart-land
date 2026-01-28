@@ -12,11 +12,6 @@ const openSans = Open_Sans({ subsets: ["latin"], variable: "--font-open-sans" })
 const team = [
   { name: "Manoj Kumar", role: "Senior Sales Manager", img: "/Manoj Kumar.png", offset: 0, size: 360 },
   { name: "Rizvi Farook", role: "General Manager", img: "/Rizvi Farook.png", offset: -40, size: 330 },
-  { name: "Shalini Perera", role: "Quality Assurance Officer", img: "/shalini.png", offset: 0, size: 365 },
-  { name: "Hansi Hettiarachchi", role: "Digital Marketing Specialist", img: "/hansi.png", offset: -40, size: 330 },
-  { name: "Lakshani Wanigathunga", role: "Customer Relations Manager", img: "/lakshani.png", offset: 0, size: 380 },
-  { name: "Hansi Hettiarachchi", role: "Digital Marketing Specialist", img: "/hansi.png", offset: -40, size: 330 },
-  { name: "Tharindu Senanayake", role: "Export Logistics Coordinator", img: "/tharindu.png", offset: 0, size: 360 },
 ];
 
 const mobileTeam = [
@@ -130,7 +125,7 @@ export default function TeamMembers() {
           {/* Scrollable Team Grid */}
           <div
             ref={scrollRef}
-            className="flex overflow-x-auto pb-2 sm:pb-3 md:pb-4 pt-12 sm:pt-16 md:pt-20 gap-0 no-scrollbar justify-between"
+            className="flex overflow-x-auto pb-2 sm:pb-3 md:pb-4 pt-12 sm:pt-16 md:pt-20 gap-0 no-scrollbar justify-center"
           >
             {team.map((person, i) => {
               const getImageSize = () => {
@@ -169,14 +164,16 @@ export default function TeamMembers() {
                   >
                     <Image src={person.img} alt={person.name} fill className="object-contain" />
                   </div>
-                  <h3
-                    className={`${inter.className} font-semibold w-32 sm:w-40 md:w-36 lg:w-52 text-base sm:text-lg md:text-lg lg:text-xl text-[#564F4F] text-left`}
-                  >
-                    {person.name}
-                  </h3>
-                  <p className={`${inter.className} text-xs sm:text-sm md:text-base lg:text-lg w-32 sm:w-40 md:w-48 lg:w-52 font-semibold text-[#ADADAD] text-left`}>
-                    {person.role}
-                  </p>
+                  <div className="flex flex-col items-start">
+                    <h3
+                      className={`${inter.className} font-semibold text-base sm:text-lg md:text-lg lg:text-xl text-[#564F4F] max-w-[80px] sm:max-w-[90px] md:max-w-[100px] lg:max-w-[110px]`}
+                    >
+                      {person.name}
+                    </h3>
+                    <p className={`${inter.className} text-xs sm:text-sm md:text-[16px] lg:text-[16px] font-light text-[#ADADAD]`}>
+                      {person.role}
+                    </p>
+                  </div>
                 </motion.div>
               );
             })}
