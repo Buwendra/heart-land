@@ -98,7 +98,7 @@ export default function HeartlandTrading() {
             >
               Uncompromising Quality & Standards
             </h2>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl font-nunito leading-relaxed sm:leading-6 mb-3 sm:mb-4">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl font-nunito leading-relaxed sm:leading-6 mb-3 sm:mb-6">
               At Heartland, quality is more than a promise it is our foundation. We take immense pride in being the only Sri Lankan food distribution company in the UAE with ISO and HACCP certifications for purchasing, storing, and distribution.
             </p>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl font-nunito leading-relaxed sm:leading-6">
@@ -132,7 +132,7 @@ export default function HeartlandTrading() {
             >
               The Heart of the <br className="hidden sm:block"/>Community
             </h2>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl font-nunito leading-relaxed sm:leading-6 mb-3 sm:mb-4">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl font-nunito leading-relaxed sm:leading-6 mb-3 sm:mb-6">
               Over the past 25 years, Heartland has grown in the heart of Dubai, serving as a vital link for the Sri Lankan community and the broader Sri Lankan business segment.
             </p>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl font-nunito leading-relaxed sm:leading-6">
@@ -145,21 +145,16 @@ export default function HeartlandTrading() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
           <AnimatedSection direction="left" className="text-center lg:text-left">
             <h2
-              className="text-xl sm:text-2xl md:text-3xl lg:text-[40px] font-bold leading-tight sm:leading-none mb-4 sm:mb-6 md:mb-8 lg:mb-12"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-[40px] font-bold leading-tight sm:leading-none mb-5 sm:mb-10 md:mb-15 lg:mb-25"
               style={{ fontFamily: 'Open Sans, sans-serif' }}
             >
               Sourcing with Purpose
             </h2>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl font-nunito leading-relaxed sm:leading-6 mb-3 sm:mb-4">
-              As the leading distributor of Sri Lankan food products, we
-              believe in building sustainable. We work hand-in-hand with local
-              farmers and producers who share our commitment to quality,
-              growth, and sustainability.
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl font-nunito leading-relaxed sm:leading-6 mb-3 sm:mb-6">
+              As the leading distributor of Sri Lankan food products, our mission goes beyond trade. We work hand-in-hand with local farmers and small-scale entrepreneurs in Sri Lanka to foster growth and sustainability.
             </p>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl font-nunito leading-relaxed sm:leading-6">
-              Every product we distribute directly links us to Sri Lankan
-              agriculture and artisans, supporting livelihoods and cultivating
-              authentic flavors.
+              Every purchase you make contributes directly to the Sri Lankan economy, supporting the hardworking hands that cultivate our authentic flavors.
             </p>
           </AnimatedSection>
           <AnimatedSection direction="right" className="relative w-full h-[220px] sm:h-[280px] md:h-[350px] lg:h-[396px] lg:w-[641px]">
