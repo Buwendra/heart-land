@@ -3,6 +3,8 @@
 import React, { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+import { Icon } from "@iconify/react";
+
 
 import { Nunito, Open_Sans, Poppins } from "next/font/google";
 
@@ -32,40 +34,157 @@ useEffect(() => {
   if (!mounted) return null; // render nothing on server
 
   return (
-    <div className="w-full mt-8 min-h-screen bg-white text-gray-900 overflow-hidden">
-      {/* Parallax Header */}
-      <motion.div style={{ y: y1 }} className="pt-20 md:pt-32 pb-6 md:pb-10 text-center px-4 sm:px-6">
-        <motion.h4
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          variants={fadeIn}
-          style={{ letterSpacing: "5px" }}
-          className="text-[16px] sm:text-xs text-gray-500 uppercase"
-        >
-          About Us
-        </motion.h4>
+  <div className="w-full mt-8 min-h-screen bg-white text-gray-900 overflow-hidden">
 
-        <motion.h1
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          variants={fadeIn}
-          className={`${nunito.className} text-[18px] sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-2`}
-        >
-          Why Work With Us
-        </motion.h1>
+    {/* Community Impact Box */}
+<div className="w-full bg-[#D11417] py-10 px-4 sm:px-6">
+  <div className="max-w-6xl mx-auto rounded-2xl p-6 sm:p-8">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+      
+      {/* LEFT BIG BOX */}
+      <div className="bg-white items-center rounded-2xl border border-[#EAEAEA] p-6 sm:p-7 text-center">
+  <h3
+    className={`${openSans.className} text-[20px] sm:text-[25px] font-bold text-black mb-3`}
+  >
+    The Heart of the Community
+  </h3>
+  <p
+    className={`${nunito.className} text-[13px] sm:text-[16px] leading-[22px] sm:leading-6 text-black`}
+  >
+    We believe in success with a soul. Through our Corporate Social Responsibility initiative,
+    we dedicate a portion of our annual profits to vital health projects in Sri Lanka. This
+    commitment reflects our deep-rooted dedication to making a positive, lasting impact that
+    transcends commercial success.
+  </p>
+</div>
 
-        <motion.p
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          variants={fadeIn}
-          className={`${nunito.className} max-w-4xl text-[12px] sm:text-base md:text-lg lg:text-xl mt-3 md:mt-10 mb-6 md:mb-10 mx-auto text-black leading-[20px] px-4`}
+
+      {/* RIGHT 2x2 BOX GRID */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        
+        {/* Box 1 */}
+        <div
+          className="bg-white rounded-[20px] border border-[#EAEAEA] shadow-sm flex flex-col items-left gap-[10px]"
+          style={{
+            width: 250,
+            height: 97,
+            paddingTop: 11,
+            paddingRight: 29,
+            paddingBottom: 11,
+            paddingLeft: 29,
+          }}
         >
-          At <span className="font-semibold">Heartland General Trading</span>, we take pride in offering more than just quality products — we deliver trust, consistency, and a commitment to excellence in every partnership. Here&apos;s what makes us stand out in Sri Lanka&apos;s food industry.
-        </motion.p>
-      </motion.div>
+          <Icon icon="streamline-ultimate-color:award-trophy-1" width={34} height={34} />
+          <p className={`${openSans.className} text-[15px] font-semibold text-black`}>
+            ISO & HACCP Certified
+          </p>
+        </div>
+
+        {/* Box 2 */}
+        <div
+          className="bg-white rounded-[20px] border border-[#EAEAEA] shadow-sm flex flex-col items-left gap-[10px]"
+          style={{
+            width: 250,
+            height: 97,
+            paddingTop: 11,
+            paddingRight: 29,
+            paddingBottom: 11,
+            paddingLeft: 29,
+          }}
+        >
+          <Icon icon="noto-v1:man-farmer" width={34} height={34} />
+          <p className={`${openSans.className} text-[15px] font-semibold text-black`}>
+            Supporting Local Farmers
+          </p>
+        </div>
+
+        {/* Box 3 */}
+        <div
+          className="bg-white rounded-[20px] border border-[#EAEAEA] shadow-sm flex flex-col items-left gap-[10px]"
+          style={{
+            width: 250,
+            height: 97,
+            paddingTop: 11,
+            paddingRight: 29,
+            paddingBottom: 11,
+            paddingLeft: 29,
+          }}
+        >
+          <Icon icon="twemoji:handshake" width={34} height={34} />
+          <p className={`${openSans.className} text-[15px] font-semibold text-black`}>
+            Community Partnership
+          </p>
+        </div>
+
+        {/* Box 4 */}
+        <div
+          className="bg-white rounded-[20px] border border-[#EAEAEA] shadow-sm flex flex-col items-left gap-[10px]"
+          style={{
+            width: 250,
+            height: 97,
+            paddingTop: 11,
+            paddingRight: 29,
+            paddingBottom: 11,
+            paddingLeft: 29,
+          }}
+        >
+          <Icon icon="noto:red-heart" width={34} height={34} />
+          <p className={`${openSans.className} text-[15px] font-semibold text-black`}>
+            CSR Health Projects
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  {/* Parallax Header */}
+  <motion.div
+    style={{ y: y1 }}
+    className="pt-20 md:pt-32 pb-6 md:pb-10 text-center  px-4 sm:px-6"
+  >
+    <motion.h4
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+      variants={fadeIn}
+      style={{ letterSpacing: "5px" }}
+      className="text-[16px] sm:text-xs text-gray-500 uppercase"
+    >
+      About Us
+    </motion.h4>
+
+    <motion.h1
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+      variants={fadeIn}
+      className={`${nunito.className} text-[18px] sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-2`}
+    >
+      Why Work With Us
+    </motion.h1>
+
+    <motion.p
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+      variants={fadeIn}
+      className={`${nunito.className} max-w-[980px] text-[12px] sm:text-base md:text-lg 
+        lg:text-xl mt-3 md:mt-10 mb-6 md:mb-10 mx-auto text-black leading-[29px] px-4`}
+    >
+      At Heartland General Trading, we prioritize quality, freshness,
+      authenticity, and community. As a premier distributor of Sri Lankan
+      food products in the UAE, we are committed to delivering the rich
+      flavors of our homeland while maintaining the highest standards.
+      Our mission goes beyond providing delicious food; we strive to foster
+      lasting connections within the Sri Lankan community and positively
+      impact local economies.
+    </motion.p>
+  </motion.div>
+
 
       {/* Cards Section */}
       <div className="flex flex-col md:grid md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto px-4 sm:px-6 pb-0 md:pb-20">
@@ -85,10 +204,10 @@ useEffect(() => {
           </div>
 
           <h3 className={`${openSans.className} font-semibold text-[#071440] text-[18px] sm:text-lg mb-2 mt-5`}>
-            Quality Certified Product
+            Quality Products & Freshness
           </h3>
           <p className={`${nunito.className} text-[#676767] text-[14px] leading-relaxed`}>
-            Every product we deliver undergoes rigorous quality checks and adheres to international food-safety standards. From sourcing raw ingredients to final packaging, our process ensures freshness, authenticity, and reliability in every batch.
+            At Heartland, we take quality seriously. We carefully select our products from trusted  suppliers to ensure that each item from our aromatic spices to our premium rice and tasty  snacks captures the authentic flavors of Sri Lanka. 
           </p>
           <button className={`${poppins.className} mt-6 sm:mt-9 text-[#071440] cursor-pointer font-bold text-[14px] hover:underline`}>
             Explore more →
@@ -111,12 +230,12 @@ useEffect(() => {
           </div>
 
           <h3 className={`${openSans.className} font-semibold text-[#071440] text-[18px] sm:text-lg mt-5 mb-2`}>
-            Strong Supplier Network
+            Extensive Supplier Network
           </h3>
           <p className={`${nunito.className} text-[#676767] text-[14px] leading-relaxed`}>
-            With connections across Sri Lanka&apos;s trusted suppliers, growers, manufacturers, and distributors, we guarantee a steady supply of premium products. Our long-term partnerships ensure transparency, ethical sourcing, and better growth for local producers.
-          </p>
-          <button className={`${poppins.className} mt-4 sm:mt-6 text-[#071440] cursor-pointer font-semibold text-sm hover:underline`}>
+            Our strong network of suppliers is key to maintaining the quality and availability of our products. By partnering closely with local farmers and producers in Sri Lanka, we not only ensure a great selection but also support our agricultural community back home.
+            </p>
+          <button className={`${poppins.className} mt-4 sm:mt-6 text-[#071440] cursor-pointer font-bold text-sm hover:underline`}>
             Explore more →
           </button>
         </motion.div>
@@ -137,12 +256,12 @@ useEffect(() => {
           </div>
 
           <h3 className={`${openSans.className} font-semibold text-[#071440] text-[18px] sm:text-lg mt-5 mb-2`}>
-            Efficient UAE Distribution
+            Nationwide Distribution
           </h3>
           <p className={`${nunito.className} text-[#676767] text-[14px] leading-relaxed`}>
-            With advanced logistics networks, we ensure timely delivery across Sri Lanka and international markets. Our efficient distribution channels maintain product freshness while ensuring every customer receives the best.
+            With over two decades of experience, Heartland General Trading has established a robust distribution network across the UAE. Our products are readily available in major hypermarkets, supermarkets, and grocery stores, ensuring easy access to your favorite Sri Lankan essentials.
           </p>
-          <button className={`${poppins.className} mt-6 sm:mt-10 text-[#071440] cursor-pointer font-semibold text-sm hover:underline`}>
+          <button className={`${poppins.className} mt-6 sm:mt-10 text-[#071440] cursor-pointer font-bold text-sm hover:underline`}>
             Explore more →
           </button>
         </motion.div>

@@ -42,9 +42,8 @@ export default function Founders() {
   };
 
   const founders = [
-    { name: "Mr. Aravinda Perera", title: "Founder and Chairman", img: "/founder 1.png" },
-    { name: "Ms. Dulani Fernando", title: "Co-Founder & Director of Operations", img: "/founder 2.png" },
-    { name: "Mr. Nuwan Jayasuriya", title: "HR Manager", img: "/founder 3.png" },
+    { name: "Fazal Mawjood", title: "Managing Director", img: "/Fazal Mawjood.png" },
+    { name: "Usaamah Fazal", title: "Director", img: "/Usaamah Fazal.png" },
   ];
 
   useEffect(() => {
@@ -82,44 +81,50 @@ export default function Founders() {
         <div className={`text-center max-w-4xl mb-8 md:mb-16 mx-auto px-4 sm:px-6 ${nunito.className}`}>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">Meet Our Founders</h2>
           <p className="text-black text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
-            At <span className="font-bold">Heartland General Trading</span>, we take pride in offering more than just quality products —
-            we deliver trust, consistency, and a commitment to excellence in every partnership.
-            Here&apos;s what makes us stand out in Sri Lanka&apos;s food industry.
+            Heartland General Trading was founded by Mohamed Fazal Mawjood, who envisioned a connection between 
+            the Sri Lankan community in the UAE and authentic food products from home. 
+            Their passion for quality and service drives our success.
           </p>
         </div>
 
-        {/* Desktop Layout - 3 columns */}
-        <div className="grid grid-cols-3 gap-6 sm:gap-8 md:gap-10 max-w-6xl mx-auto px-4 sm:px-6 md:px-9">
-          {founders.map((founder, index) => (
-            <div
-              key={index}
-              ref={(el) => setCardRef(el, index)}
-              className="relative overflow-hidden bg-white group"
-            >
-              {/* Image Container for Parallax */}
-              <div className="h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] xl:h-[480px] w-full overflow-hidden relative parallax-img">
-                <Image
-                  src={founder.img}
-                  alt={founder.name}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-300 ease-out"
-                  priority={index === 0}
-                />
-              </div>
+{/* Desktop Layout - 2 cards centered */}
+<div className="relative max-w-6xl mx-auto px-4 sm:px-6 md:px-9">
+  {/* vertical divider like the screenshot */}
+  <div className="hidden lg:block absolute left-1/2 top-0 -translate-x-1/2 w-[2px] h-full bg-[#E6E6E6]" />
 
-              {/* Info Box */}
-              <div className="px-3 sm:px-4 py-4 sm:py-5 mx-auto w-[80%] text-center border-t-4 border-red-600 bg-white relative -mt-8 sm:-mt-10 z-20 min-h-[100px] sm:min-h-[120px] md:h-32">
-                <h3 className={`${openSans.className} font-bold text-base sm:text-lg md:text-xl text-[#000000]`}>
-                  {founder.name}
-                </h3>
-                <p className={`${openSans.className} text-sm sm:text-base md:text-lg font-semibold text-[#000000]`}>
-                  {founder.title}
-                </p>
-              </div>
-            </div>
-          ))}
+  <div className="grid grid-cols-2 gap-8 lg:gap-12 justify-items-center items-start">
+    {founders.map((founder, index) => (
+      <div
+        key={index}
+        ref={(el) => setCardRef(el, index)}
+        className="relative overflow-hidden bg-white group w-full max-w-[420px]"
+      >
+        {/* Image Container for Parallax */}
+        <div className="h-[420px] lg:h-[520px] w-full overflow-hidden relative parallax-img">
+          <Image
+            src={founder.img}
+            alt={founder.name}
+            fill
+            sizes="(max-width: 1024px) 50vw, 420px"
+            className="object-cover transition-transform duration-300 ease-out"
+            priority={index === 0}
+          />
         </div>
+
+        {/* Info Box */}
+        <div className="mx-auto w-[80%] text-center border-t-8 border-red-600 bg-white relative -mt-10 z-20 min-h-[100px] md:min-h-[120px] py-4 px-4">
+          <h3 className={`${openSans.className} font-bold text-base md:text-lg text-[#000000]`}>
+            {founder.name}
+          </h3>
+          <p className={`${openSans.className} text-sm md:text-base font-semibold text-[#000000]`}>
+            {founder.title}
+          </p>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
       </section>
 
       {/* Mobile Section */}
