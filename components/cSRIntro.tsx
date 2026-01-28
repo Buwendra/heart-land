@@ -35,7 +35,7 @@ export default function CsrIntro() {
   const parallax = (multiplier: number) => `translateY(${scrollY * multiplier}px)`;
 
   return (
-    <section className="w-full max-w-[1400px] mx-auto px-6 py-10 md:px-10 bg-[#EEEEEE] md:bg-transparent">
+<section className="w-full max-w-[1400px] mx-auto px-6 py-10 md:px-36 mt-44 bg-[#EEEEEE] md:bg-transparent">
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-7 items-center">
         {/* RIGHT SIDE IMAGE / VIDEO */}
@@ -73,31 +73,22 @@ export default function CsrIntro() {
         </div>
 
         {/* LEFT TEXT */}
-        <div className="text-center md:text-left">
-          <h2
-            className={`${nunito.className} text-[16px] md:text-[23px] font-extrabold leading-6 text-[#0F0202]`}
-          >
-            Heartland empowers communities by creating sustainable opportunities
-            for Sri Lankan farmers and families.
-          </h2>
+        <div className="text-start justify-start md:text-left self-start">
+  <h2
+    className={`${nunito.className} text-[16px] md:text-[23px] mb-10 font-extrabold leading-6 text-[#0F0202]`}
+  >
+    Expanding Our Mission
+  </h2>
 
-          <p
-            className={`${openSans.className} text-[15px] mt-5 leading-[23px] text-[#2C2C2C]`}
-          >
-            Through our CSR programs, we work hand-in-hand with local producers,
-            women entrepreneurs, and youth to build skills that drive long-term
-            growth.
-            <br />
-            From fair trade sourcing to nutrition and education projects, every
-            initiative reflects our belief that true progress begins with empowerment.
-            <br />
-            <br />
-            By combining ethical trade, sustainability, and community partnerships,
-            Heartland General Trading is shaping a future where every Sri Lankan
-            producer can thrive on the global stage — with pride, dignity, and
-            opportunity.
-          </p>
-        </div>
+  <p
+    className={`${openSans.className} text-[15px] mt-8 leading-[23px] text-[#2C2C2C]`}
+  >
+    Looking ahead, we are proud to be expanding this mission. We are currently in the process of partnering
+    with prominent Sri Lankan cricketers who lead dedicated cancer projects, ensuring our contributions
+    provide maximum impact and support to those who need it most.
+  </p>
+</div>
+
       </div>
     </section>
   );
