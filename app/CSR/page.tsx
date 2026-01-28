@@ -1,8 +1,7 @@
 import CsrIntro from '@/components/cSRIntro';
 import CsrShowcase from '@/components/csrShowcase';
-import Footer from '@/components/footer';
-import Navbar from '@/components/Navbar';
 import OurProjects from '@/components/ourProjects';
+import PurchaseDifference from '@/components/Purchasedifference';
 import WhatPeopleSays from '@/components/whatPeopleSays';
 
 export default function csr() {
@@ -12,6 +11,7 @@ export default function csr() {
     <OurProjects />
     <CsrIntro />
     <WhatPeopleSays />
+    <PurchaseDifference />
     </ >
   );
 }
