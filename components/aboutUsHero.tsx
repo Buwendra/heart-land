@@ -2,7 +2,6 @@
 
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export default function AboutHero() {
@@ -55,15 +54,18 @@ useEffect(() => {
             premium rice varieties, condiments, snacks, and more.  
 
           </p>
-          <Link
-            href="#"
+          <button
+            onClick={() => {
+              document.getElementById('evolution-section')?.scrollIntoView({ behavior: 'smooth' });
+            }}
             className="
               inline-block  font-semibold text-[14px]
               bg-[#D11417] text-white px-8 py-3
               shadow-2xl transition-all duration-300 ease-out
               relative overflow-hidden
-              hover:scale-[1.02] hover:shadow-xl
+              hover:scale-[1.02] 
               hover:-translate-y-1 transform-gpu
+              cursor-pointer
             "
             style={{
               borderTopLeftRadius: "20px",
@@ -72,10 +74,9 @@ useEffect(() => {
               borderBottomLeftRadius: "5px",
               fontFamily: "David Libre",
             }}
-
           >
             Explore More
-          </Link>
+          </button>
         </div>
       </section>
 
@@ -96,15 +97,18 @@ useEffect(() => {
              premium rice varieties, condiments, snacks, and more.  
 
           </p>
-          <Link
-            href="#"
+          <button
+            onClick={() => {
+              document.getElementById('evolution-section')?.scrollIntoView({ behavior: 'smooth' });
+            }}
             className="
               inline-block uppercase font-semibold text-sm sm:text-base
               text-[#D11417]  px-0 sm:py-4
                transition-all duration-300 ease-out
-              relative overflow-hidden 
-              hover:scale-[1.02] hover:shadow-xl
+              relative overflow-hidden
+              hover:scale-[1.02]
               hover:-translate-y-1 transform-gpu tracking-widest
+              cursor-pointer
             "
             style={{
               clipPath: "polygon(0 0, 100% 0, 85% 100%, 0% 100%)",
@@ -112,7 +116,7 @@ useEffect(() => {
             }}
           >
           Explore More &gt;&gt;
-          </Link>
+          </button>
         </div>
 
         {/* Right Images with parallax */}

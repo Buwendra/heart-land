@@ -45,7 +45,7 @@ export default function VisionMission() {
 
       <div className="px-4 sm:px-6 md:px-8 font-nunito">
         {/* Evolution paragraph */}
-        <p className="text-center text-[#676767] text-[12px] sm:text-lg md:text-[17px] leading-relaxed max-w-5xl mx-auto mb-10 md:mb-12">
+        <p id="evolution-section" className="text-center text-[#676767] text-[12px] sm:text-lg md:text-[17px] leading-relaxed max-w-5xl mx-auto mb-10 md:mb-12 scroll-mt-20">
           Our Evolution: From Local Roots to Global Trading. While we began as a
           trusted local distributor, Heartland’s vision has always been global.
           In 2013, Heartland General Trading expanded its horizons by launching
