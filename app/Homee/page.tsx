@@ -13,8 +13,8 @@ export default function HomePagee() {
     <HomeHero />
     <Partners />
     <Blog/>
-    <Initiative />
-    {/* <Testimonials /> - hide for now */} 
+     <Initiative /> 
+    {/* <Testimonials />  - hide for now */} 
     <Faq />
     <HeroBanner />   
     </>

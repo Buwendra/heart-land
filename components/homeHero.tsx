@@ -72,15 +72,31 @@ useEffect(() => {
       className="font-extrabold text-[32px] leading-[45px] tracking-[0.02em] mb-4"
       style={{ fontFamily: "'David Libre', serif" }}
     >
-      Your Gateway to <br/>Sri Lankan <br/>Products in the <br/>UAE
+      Welcome to Heartland General Trading
     </h1>
 
     {/* Paragraph */}
     <p className="font-normal text-[14px] leading-[26px] text-[#5C6574] mb-8 text-left">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-    </p>
+  At Heartland General Trading, we bring the authentic soul of Sri Lankan cuisine to the UAE.
+  We proudly offer a curated selection of over 200+ premium products, each chosen for its
+  quality, freshness, and heritage. Our commitment ensures you have direct access to the rich,
+  vibrant flavors of the island.
+</p>
 
-    {/* Buttons */}
+<p className="font-normal text-[14px] leading-[26px] text-[#5C6574] mb-8 text-left">
+  Discover our aromatic spice collection, featuring Turmeric, Cinnamon, and high-quality
+  Curry Powder, alongside an extensive variety of premium rice. From kitchen staples like
+  Keeri Samba, Red Raw, and White Rice to nutrient-rich traditional grains such as Kurulu
+  Thuda and Suwadel, we cater to every palate.
+</p>
+
+<p className="font-normal text-[14px] leading-[26px] text-[#5C6574] mb-8 text-left">
+  Beyond the essentials, explore our diverse range including fine flours, rich jams, natural
+  Jaggery, and Kithul Treacle. For a true taste of the island’s coast, our Jack Mackerel is the
+  perfect addition to your home-cooked meals.
+</p>
+
+      {/* Buttons */}
     <div className="flex gap-5 mb-8">
       <Link href="/Product">
         <button className="bg-black text-white px-6 py-2.5 text-[13px] shadow-md transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-lg hover:-translate-y-1 transform-gpu hover:bg-white hover:text-black border-2 border-black rounded-tl-2xl rounded-br-2xl rounded-tr-sm rounded-bl-sm">
@@ -182,11 +198,28 @@ useEffect(() => {
                 className="font-extrabold text-[32px] sm:text-[40px] md:text-[50px] lg:text-[60px] leading-[36px] sm:leading-[44px] md:leading-[56px] lg:leading-[70px] tracking-[0.02em]"
                 style={{ fontFamily: "'David Libre', serif" }}
               >
-                Your Gateway to Sri Lankan Products in the UAE
+                Welcome to Heartland General Trading
               </h1>
-              <p className="font-normal md:mr-48 mb-8 md:mb-20 text-[14px] md:text-[16px] leading-[24px] md:leading-[29px] text-slate-600 mt-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
+              <p className="font-normal text-[14px] leading-[26px] text-[#5C6574] mb-8 text-left">
+  At Heartland General Trading, we bring the authentic soul of Sri Lankan cuisine to the UAE.
+  We proudly offer a curated selection of over 200+ premium products, each chosen for its
+  quality, freshness, and heritage. Our commitment ensures you have direct access to the rich,
+  vibrant flavors of the island.
+</p>
+
+<p className="font-normal text-[14px] leading-[26px] text-[#5C6574] mb-8 text-left">
+  Discover our aromatic spice collection, featuring Turmeric, Cinnamon, and high-quality
+  Curry Powder, alongside an extensive variety of premium rice. From kitchen staples like
+  Keeri Samba, Red Raw, and White Rice to nutrient-rich traditional grains such as Kurulu
+  Thuda and Suwadel, we cater to every palate.
+</p>
+
+<p className="font-normal text-[14px] leading-[26px] text-[#5C6574] mb-8 text-left">
+  Beyond the essentials, explore our diverse range including fine flours, rich jams, natural
+  Jaggery, and Kithul Treacle. For a true taste of the island’s coast, our Jack Mackerel is the
+  perfect addition to your home-cooked meals.
+</p>
+
 
               <div className="flex flex-col sm:flex-row gap-4 mt-8 md:mt-12 mb-8">
                 <Link href="/Product">

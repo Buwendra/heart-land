@@ -61,14 +61,11 @@ React.useEffect(() => {
             Your Trusted Partner in Sri Lankan Food Distribution
           </h3>
 
-          <p className="text-[#6A6969] text-center text-[15px] sm:text-lg md:text-xl mt-5 mb-6 lg:mb-0 leading-relaxed -tracking-normal">
-            <span className="font-semibold text-[#6A6969]">
-              Heartland General Trading Co. LLC
-            </span>{" "}
+          <p className=" text-left text-[15px] sm:text-lg md:text-xl mt-5 mb-6 lg:mb-0 leading-relaxed -tracking-normal">
+            
             <span className="font-light lg:font-normal">
-              is a leading importer and distributor of premium Sri Lankan food
-              products in the UAE. Based in Dubai, we connect authentic Sri Lankan
-              flavors with global markets through trusted partnerships and modern logistics.
+              At Heartland General Trading, every product in our growing range is a testament to our  dedication to 
+              authenticity and flavor. We invite you to explore the essence of Sri Lanka with  us.
             </span>
           </p>
 
@@ -89,7 +86,7 @@ React.useEffect(() => {
             {/* 15+ Years Expertise */}
             <div className="text-center flex-1">
               <h4 className="font-semibold text-[25px] sm:text-[40px] leading-tight text-black mb-2">
-                15+
+                25
               </h4>
               <p className="font-light text-[12px] sm:text-[10px] leading-tight uppercase text-black tracking-[0.4em] whitespace-nowrap">
                 YEARS
@@ -156,7 +153,7 @@ React.useEffect(() => {
     {/* Spices image */}
     <div className="w-[90px] sm:w-[120px] md:w-[180px] lg:w-[230px] h-[100px] sm:h-[140px] md:h-[200px] lg:h-[270px] overflow-hidden rounded-tr-[20px] sm:rounded-tr-[30px] md:rounded-tr-[40px] lg:rounded-tr-[50px]">
       <Image
-        src="/IMG3.png"
+        src="/Spices.png"
         alt="Spices"
         width={243}
         height={290}
@@ -186,7 +183,7 @@ React.useEffect(() => {
     className="font-normal font-['Open_Sans'] text-[28px] sm:text-[32px] md:text-[40px] leading-[120%] text-[#6D7D7D]"
     style={{ letterSpacing: "20%" }}
   >
-    15+
+    25
   </h4>
 
   <p

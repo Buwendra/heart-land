@@ -117,14 +117,14 @@ export default function Footer() {
                 <FaInstagram className="text-white" size={10} />
               </a>
 
-              <a
+               {/* <a
                 href="https://youtube.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-5 h-5 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors duration-300 ease-out hover:scale-110 hover:-translate-y-1"
               >
                 <FaYoutube className="text-white" size={10} />
-              </a>
+              </a> */}
             </div>
           </div>
 
@@ -163,9 +163,9 @@ export default function Footer() {
               </p>
 
               <div className="flex gap-4 md:gap-6 text-sm mt-4 cursor-pointer">
-                <a href="https://www.facebook.com/p/Heartland-General-Trading-Co-LLC-61556223026571/?_rdc=2&_rdr#">Facebook</a>
+                <a href="https://web.facebook.com/HeartlandGeneralTrading">Facebook</a>
                 <a href="https://www.instagram.com/heartlandgeneral/">Instagram</a>
-                <a href="#">LinkedIn</a>
+                <a href="https://www.linkedin.com/company/heartland-general-trading-co-llc-dubai/?viewAsMember=true">LinkedIn</a>
               </div>
             </div>
 
@@ -226,42 +226,44 @@ export default function Footer() {
               <a href="#" className="hover:text-[#D11417] transition-colors duration-300">Cookies</a>
             </div>
 
-            <div className="flex items-center gap-3 md:gap-4">
+            <div className="flex items-left gap-3 md:gap-4 md:mr-48">
               <a
-                href="https://www.facebook.com/p/Heartland-General-Trading-Co-LLC-61556223026571/?_rdc=2&_rdr#"
+                href="https://web.facebook.com/HeartlandGeneralTrading"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-5 h-5 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors duration-300 ease-out hover:scale-110 hover:-translate-y-1"
+                className="w-7 h-7 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors duration-300 ease-out hover:scale-110 hover:-translate-y-1"
               >
-                <FaFacebookF className="text-white" size={10} />
+                <FaFacebookF className="text-white" size={12} />
               </a>
 
               <a
+                href="https://www.instagram.com/heartlandgeneral/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-7 h-7 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors duration-300 ease-out hover:scale-110 hover:-translate-y-1"
+              >
+                <FaInstagram className="text-white" size={12} />
+              </a>
+
+              {/* <a
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-5 h-5 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors duration-300 ease-out hover:scale-110 hover:-translate-y-1"
               >
                 <FaTwitter className="text-white" size={10} />
-              </a>
+              </a> */}
 
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-5 h-5 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors duration-300 ease-out hover:scale-110 hover:-translate-y-1"
-              >
-                <FaInstagram className="text-white" size={10} />
-              </a>
+              
 
-              <a
+               {/*<a
                 href="https://youtube.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-5 h-5 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors duration-300 ease-out hover:scale-110 hover:-translate-y-1"
               >
                 <FaYoutube className="text-white" size={10} />
-              </a>
+              </a>*/}
             </div>
 
           </div>
