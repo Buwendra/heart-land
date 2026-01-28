@@ -10,8 +10,8 @@ const nunito = Nunito({ subsets: ["latin"], variable: "--font-nunito" });
 const openSans = Open_Sans({ subsets: ["latin"], variable: "--font-open-sans" });
 
 const team = [
-  { name: "Tharindu Senanayake", role: "Export Logistics Coordinator", img: "/tharindu.png", offset: 0, size: 360 },
-  { name: "Hashan Madushanka", role: "Business Development Executive", img: "/hashan.png", offset: -40, size: 330 },
+  { name: "Manoj Kumar", role: "Senior Sales Manager", img: "/Manoj Kumar.png", offset: 0, size: 360 },
+  { name: "Rizvi Farook", role: "General Manager", img: "/Rizvi Farook.png", offset: -40, size: 330 },
   { name: "Shalini Perera", role: "Quality Assurance Officer", img: "/shalini.png", offset: 0, size: 365 },
   { name: "Hansi Hettiarachchi", role: "Digital Marketing Specialist", img: "/hansi.png", offset: -40, size: 330 },
   { name: "Lakshani Wanigathunga", role: "Customer Relations Manager", img: "/lakshani.png", offset: 0, size: 380 },
@@ -20,8 +20,8 @@ const team = [
 ];
 
 const mobileTeam = [
-  { name: "Alexis Jensen", role: "Export Logistics Coordinator", img: "/fcf5dbf8a60f8660b370b432520d1e7ddd3cf12b.jpg" },
-  { name: "Alexis Jensen", role: "Export Logistics Coordinator", img: "/fcf5dbf8a60f8660b370b432520d1e7ddd3cf12b.jpg" },
+  { name: "Manoj Kumar", role: "Senior Sales Manager", img: "/Manoj Kumar1.png" },
+  { name: "Rizvi Farook", role: "General Manager", img: "/Rizvi Farook1.png" },
   { name: "Alexis Jensen", role: "Export Logistics Coordinator", img: "/fcf5dbf8a60f8660b370b432520d1e7ddd3cf12b.jpg" },
   { name: "Alexis Jensen", role: "Export Logistics Coordinator", img: "/fcf5dbf8a60f8660b370b432520d1e7ddd3cf12b.jpg" },
 ];
@@ -170,7 +170,7 @@ export default function TeamMembers() {
                     <Image src={person.img} alt={person.name} fill className="object-contain" />
                   </div>
                   <h3
-                    className={`${inter.className} font-semibold w-32 sm:w-40 md:w-48 lg:w-52 text-base sm:text-lg md:text-xl lg:text-2xl text-[#564F4F] text-left`}
+                    className={`${inter.className} font-semibold w-32 sm:w-40 md:w-36 lg:w-52 text-base sm:text-lg md:text-lg lg:text-xl text-[#564F4F] text-left`}
                   >
                     {person.name}
                   </h3>
