@@ -14,7 +14,7 @@ const openSans = Open_Sans({
   weight: ["400", "600", "700"],
 });
 
-type FaqItem = { question: string; answer: string };
+type FaqItem = { question: string; answer: React.ReactNode };
 type FaqSection = {
   title: string;
   intro?: string;  
@@ -78,7 +78,7 @@ export default function Faqs() {
         {
           question: "What initiatives do you support?",
           answer:
-            "We are dedicated to supporting local farmers and women entrepreneurs in Sri Lanka. Additionally, we have launched our ♥ initiative, which contributes a percentage of our annual profits to a Cancer Project in Sri Lanka. This initiative not only aids in raising awareness and funding for cancer treatment and research but also empowers our community to make a meaningful impact back home. Through our efforts, we aim to foster community development and sustainability while supporting those in need.",
+            (<>We are dedicated to supporting local farmers and women entrepreneurs in Sri Lanka. Additionally, we have launched our &ldquo;Heartland <span className="">❤️</span> Homeland&rdquo; initiative, which contributes a percentage of our annual profits to a Cancer Project in Sri Lanka. This initiative not only aids in raising awareness and funding for cancer treatment and research but also empowers our community to make a meaningful impact back home. Through our efforts, we aim to foster community development and sustainability while supporting those in need.</>),
         },
       ],
     },
@@ -100,26 +100,28 @@ export default function Faqs() {
   };
 
   return (
-    <section className="relative w-full py-10 px-5 md:px-10">
-      {/* Desktop background image   */}
-            <div className="absolute inset-0 opacity-100 ml-[800px] top-[500px] pointer-events-none hidden md:block">
-              <img
-                src="/sriLankaMap.png"
-                alt="SL Map Background"
-                className="w-[500px] h-[500px] object-left"
-              />
-            </div>
-      
-            {/* Mobile background image */}
-            <div className="absolute inset-0 md:hidden opacity-100 top-[500px] pointer-events-none -z-10">
-              <Image
-                src="/sriLankaMap.png"
-                alt="FAQ background"
-                width={500}
-                height={500}
-                className="object-cover"
-              />
-            </div>
+    <section className="relative w-full py-20 px-5 md:px-10">
+      {/* Desktop background image */}
+      <div className="absolute inset-0 opacity-100 ml-[800px] top-[500px] pointer-events-none hidden md:block">
+        <Image
+          src="/sriLankaMap.png"
+          alt="SL Map Background"
+          width={500}
+          height={500}
+          className="object-left"
+        />
+      </div>
+
+      {/* Mobile background image */}
+      <div className="absolute inset-0 md:hidden opacity-100 top-[500px] pointer-events-none -z-10">
+        <Image
+          src="/sriLankaMap.png"
+          alt="FAQ background"
+          width={500}
+          height={500}
+          className="object-cover"
+        />
+      </div>
 
       {/* Desktop Background Image */}
       <div className="absolute inset-0 opacity-5 -mt-20 pointer-events-none hidden md:block">
@@ -138,20 +140,20 @@ export default function Faqs() {
       </div>
 
       {/* ================= DESKTOP (FIXED ALIGNMENT) ================= */}
-      <div className="relative z-10 max-w-7xl mx-auto hidden md:block">
+      <div className="relative z-10 max-w-8xl mx-auto hidden md:block">
         {/* Each topic is a ROW: left title + right questions */}
-        <div className="grid grid-cols-2 gap-x-16 gap-y-24">
+        <div className="grid grid-cols-[400px_1fr] gap-x-20 gap-y-24 pl-25">
           {sections.map((sec, sectionIndex) => (
             <div key={sectionIndex} className="contents">
               {/* LEFT cell (title) */}
-              <div className="ml-32 self-start">
-                <h2 className={`text-[32px] font-bold text-black ${nunito.className}`}>
+              <div className="self-start">
+                <h2 className={`text-[36px] font-bold text-black ${nunito.className}`}>
                   {sec.title}
                 </h2>
               </div>
 
               {/* RIGHT cell (faq list) */}
-              <div className="max-w-[650px] -ml-20 self-start space-y-5">
+              <div className="max-w-[640px] self-start space-y-8">
                 {sec.faqs.map((faq, faqIndex) => {
                   const isOpen = openBySection[sectionIndex] === faqIndex;
 
@@ -159,13 +161,13 @@ export default function Faqs() {
                     <div key={faqIndex}>
                       {/* Question */}
                       <p
-  className={`text-[15px] py-2 cursor-pointer font-semibold ${openSans.className} ${
-    isOpen ? "text-[#D11417]" : "text-black"
-  }`}
-  onClick={() => toggleFaq(sectionIndex, faqIndex)}
->
-  {faq.question}
-</p>
+                        className={`text-xl py-2 cursor-pointer font-semibold my-3 ${openSans.className} ${
+                          isOpen ? "text-[#D11417]" : "text-black"
+                        }`}
+                        onClick={() => toggleFaq(sectionIndex, faqIndex)}
+                      >
+                        {faq.question}
+                      </p>
 
                       {/* Answer under question */}
                       <div
@@ -174,7 +176,7 @@ export default function Faqs() {
                         }`}
                       >
                         <p
-                          className={`text-[12px] text-[#333] leading-[20px] mt-1 mb-2 ${nunito.className}`}
+                          className={`text-[16px] text-black leading-[25px] mt-1 mb-8 ${nunito.className}`}
                         >
                           {faq.answer}
                         </p>
@@ -216,14 +218,13 @@ export default function Faqs() {
                 return (
                   <div key={faqIndex}>
                     <p
-  className={`text-[16px] py-2 cursor-pointer font-semibold ${openSans.className} ${
-    isOpen ? "text-[#D11417]" : "text-black border-b border-[#D11417]"
-  }`}
-  onClick={() => toggleFaq(sectionIndex, faqIndex)}
->
-  {faq.question}
-</p>
-
+                      className={`text-[16px] py-2 cursor-pointer font-semibold ${openSans.className} ${
+                        isOpen ? "text-[#D11417]" : "text-black border-b border-[#D11417]"
+                      }`}
+                      onClick={() => toggleFaq(sectionIndex, faqIndex)}
+                    >
+                      {faq.question}
+                    </p>
 
                     <div
                       className={`overflow-hidden transition-all duration-500 ease-in-out ${
