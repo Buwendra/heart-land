@@ -193,33 +193,16 @@ useEffect(() => {
             </div>
 
             {/* Left content */}
-            <div className="md:col-span-7 lg:col-span-6 z-10 px-4 md:ml-14">
+            <div className="md:col-span-7 lg:col-span-6 z-10 px-4 ">
               <h1
                 className="font-extrabold text-[32px] sm:text-[40px] md:text-[50px] lg:text-[60px] leading-[36px] sm:leading-[44px] md:leading-[56px] lg:leading-[70px] tracking-[0.02em]"
                 style={{ fontFamily: "'David Libre', serif" }}
               >
                 Welcome to Heartland General Trading
               </h1>
-              <p className="font-normal text-[14px] leading-[26px] text-[#5C6574] mb-8 text-left">
-  At Heartland General Trading, we bring the authentic soul of Sri Lankan cuisine to the UAE.
-  We proudly offer a curated selection of over 200+ premium products, each chosen for its
-  quality, freshness, and heritage. Our commitment ensures you have direct access to the rich,
-  vibrant flavors of the island.
-</p>
-
-<p className="font-normal text-[14px] leading-[26px] text-[#5C6574] mb-8 text-left">
-  Discover our aromatic spice collection, featuring Turmeric, Cinnamon, and high-quality
-  Curry Powder, alongside an extensive variety of premium rice. From kitchen staples like
-  Keeri Samba, Red Raw, and White Rice to nutrient-rich traditional grains such as Kurulu
-  Thuda and Suwadel, we cater to every palate.
-</p>
-
-<p className="font-normal text-[14px] leading-[26px] text-[#5C6574] mb-8 text-left">
-  Beyond the essentials, explore our diverse range including fine flours, rich jams, natural
-  Jaggery, and Kithul Treacle. For a true taste of the island’s coast, our Jack Mackerel is the
-  perfect addition to your home-cooked meals.
-</p>
-
+              <p className="font-normal md:mr-48 mb-8 md:mb-20 text-[14px] md:text-[16px] leading-[24px] md:leading-[29px] text-slate-600 mt-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mt-8 md:mt-12 mb-8">
                 <Link href="/Product">
@@ -232,7 +215,7 @@ useEffect(() => {
                     Learn More
                   </button>
                 </Link>
-              </div>
+              </div> 
 
               <div className="flex items-center gap-4 mt-8">
                 <div className="flex gap-3 items-center">
@@ -286,14 +269,14 @@ useEffect(() => {
               {/* World Map - Background Layer */}
               <div
                 ref={mediumRef}
-                className="absolute md:-left-[500px] lg:-left-120 xl:-left-140 top-4 md:w-[1200px] lg:w-[1600px] xl:w-[2020px] md:h-[700px] lg:h-[900px] xl:h-[1080px] md:opacity-50 lg:opacity-60 pointer-events-none"
+                className="absolute md:-left-[500px] lg:-left-120 xl:-left-140 -top-28 md:w-[1200px] lg:w-[1600px] xl:w-[2020px] md:h-[700px] lg:h-[900px] xl:h-[1080px] md:opacity-50 lg:opacity-60 pointer-events-none"
               >
                 <Image
                   src="/MapNew.png"
                   alt="world map"
                   width={1220}
                   height={880}
-                  className="object-contain rotate-[8deg]"
+                  className="object-contain"
                 />
               </div>
               <div className="absolute md:-left-24 lg:-left-10 xl:-left-28 md:-top-10 lg:-top-12 xl:-top-15 md:w-[320px] lg:w-[380px] xl:w-[450px] md:h-[220px] lg:h-[245px] xl:h-[280px] opacity-180 pointer-events-none">
