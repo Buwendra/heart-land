@@ -71,7 +71,7 @@ export default function HomeHero() {
 
             {/* Buttons */}
             <div className="flex gap-5 mb-8">
-              <Link href="/Product">
+              {/* <Link href="/Product">
                 <button className="bg-black text-white px-6 py-2.5 text-[13px] shadow-md transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-lg hover:-translate-y-1 transform-gpu hover:bg-white hover:text-black border-2 border-black rounded-tl-2xl rounded-br-2xl rounded-tr-sm rounded-bl-sm">
                   Products
                 </button>
@@ -80,7 +80,7 @@ export default function HomeHero() {
                 <button className="bg-[#D11417] text-white px-6 py-2.5 text-[13px] shadow-md transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-lg hover:-translate-y-1 transform-gpu hover:bg-white hover:text-[#D11417] border-2 border-[#D11417] rounded-tl-2xl rounded-br-2xl rounded-tr-sm rounded-bl-sm">
                   Learn More
                 </button>
-              </Link>
+              </Link> */}
             </div>
 
             {/* Social Media Icons */}
@@ -195,7 +195,7 @@ export default function HomeHero() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mt-8 md:mt-12 mb-8">
-                <Link href="/Product">
+                {/* <Link href="/Product">
                   <button className="inline-block cursor-pointer w-full sm:w-auto bg-black text-white px-6 py-3 shadow-md transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-lg hover:-translate-y-1 transform-gpu hover:bg-white hover:text-black border-2 border-black rounded-tl-2xl rounded-br-2xl rounded-tr-sm rounded-bl-sm">
                     Products
                   </button>
@@ -204,7 +204,7 @@ export default function HomeHero() {
                   <button className="inline-block cursor-pointer w-full sm:w-auto bg-[#D11417] text-white px-6 py-3 shadow-md transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-lg hover:-translate-y-1 transform-gpu hover:bg-white hover:text-[#D11417] border-2 border-[#D11417] rounded-tl-2xl rounded-br-2xl rounded-tr-sm rounded-bl-sm">
                     Learn More
                   </button>
-                </Link>
+                </Link> */}
               </div>
 
               <div className="flex items-center gap-4 mt-8">
