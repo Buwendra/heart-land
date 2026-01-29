@@ -22,16 +22,13 @@ export default function Footer() {
           {/* Email */}
           <div className="flex items-center justify-between mb-4 cursor-pointer w-full">
             <p className="text-sm break-all sm:break-normal">info@heartlandtrading.ae</p>
-            <span className="text-2xl shrink-0">⭧</span>
+            <span className="text-2xl shrink-0 ml-10">⭧</span>
           </div>
          
 
           {/* Newsletter Paragraph */}
           <p className="text-sm text-gray-400 leading-7 mb-6 w-full text-justify">
-            Subscribe to our newsletter and discover the authentic taste of Sri Lanka in every update.
-            Be the first to know about new product launches, exclusive offers, and Heartland community
-            stories from Sri Lankan producers to UAE homes.
-            Join our global community that celebrates authentic flavour, quality, and sustainability.
+            Bringing the authentic flavors of Sri Lanka to the UAE, Heartland General Trading Co LLC is dedicated to quality, community impact, and supporting local farmers through ethical and sustainable trade.
           </p>
 
           {/* Quick Link and Information in one row */}
@@ -156,10 +153,7 @@ export default function Footer() {
               <div className="w-full lg:w-[600px] h-px bg-gray-600 mb-6 md:mb-7"></div>
 
               <p className="text-sm text-white leading-7 md:leading-8 mb-4 w-full lg:w-[570px]">
-                Subscribe to our newsletter and discover the authentic taste of Sri Lanka in every update.
-                Be the first to know about new product launches, exclusive offers, and Heartland community
-                stories from Sri Lankan producers to UAE homes.
-                Join our global community that celebrates authentic flavour, quality, and sustainability.
+                Bringing the authentic flavors of Sri Lanka to the UAE, Heartland General Trading Co LLC is dedicated to quality, community impact, and supporting local farmers through ethical and sustainable trade.
               </p>
 
               <div className="flex gap-4 md:gap-6 text-sm mt-4 cursor-pointer">
