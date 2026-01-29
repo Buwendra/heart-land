@@ -31,10 +31,10 @@ export default function CommunityPillar() {
       </div>
 
       {/* Main Content Card */}
-      <div className="w-full lg:w-[1200px] lg:h-[754px] mx-auto bg-white rounded-[20px] lg:rounded-[30px] border border-[#E0E0E0] overflow-hidden">
+      <div className="w-full max-w-[1200px] mx-auto bg-white rounded-[20px] lg:rounded-[30px] border border-[#E0E0E0] overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 h-full">
           {/* Image Section */}
-          <div className="relative h-[250px] sm:h-[300px] md:h-[400px] lg:h-[754px] lg:w-[600px] overflow-hidden rounded-[20px]">
+          <div className="relative h-[250px] sm:h-[300px] md:h-[400px] lg:h-auto overflow-hidden rounded-[20px]">
             <Image
               src="/Handshake Image.png"
               alt="Diplomatic Handshake"
