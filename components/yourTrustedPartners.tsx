@@ -28,11 +28,11 @@ React.useEffect(() => {
     <section className="py-10 md:py-20 bg-white">
       <div className="max-w-full w-auto">
         {/* Full-width Gradient Section */}
-<div className="bg-gradient-to-b from-[#fcd6d6] to-[#f5585866] py-7">
+<div className="py-7">
 
   {/* Content */}
   <div className="text-center px-4">
-    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-6 md:mb-8">
+    <h2 className="text-2xl sm:text-3xl md:text-[40px] font-bold text-black mb-8 md:mb-12">
       Our Trusted Partners
     </h2>
 
