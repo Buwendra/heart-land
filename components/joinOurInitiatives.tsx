@@ -54,7 +54,7 @@ export default function Initiative() {
           </p>
 
           <h2 className="text-[20px] sm:text-5xl font-bold text-black leading-tight" style={{ fontFamily: 'Open Sans' }}>
-            Join our initiatives
+            Our Commitment to Community
           </h2>
 
           {/* Image with background */}
@@ -80,9 +80,9 @@ export default function Initiative() {
           </div>
 
           <p className="text-[#6A6969] text-[13px] sm:text-lg leading-relaxed max-w-lg mx-auto px-2">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor. Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit. Sed do eiusmod tempor.
+            At Heartland General Trading, we believe in making a positive impact. We’re dedicated to  
+            supporting our communities and promoting sustainability in everything we do. Together, we  
+            strive for a better future.
           </p>
 
           {/* Buttons */}
@@ -92,7 +92,7 @@ export default function Initiative() {
               Learn More
             </button>
 
-            {/* Watch Videos Button */}
+            {/* Watch Videos Button 
             <button className="font-nunito group flex items-center justify-center gap-1.5 border-2 border-[#D11417] text-black font-semibold text-base sm:text-lg px-4 sm:px-6 py-2 sm:py-2 rounded-full transition-all duration-300 hover:bg-[#D11417] hover:border-[#D11417] hover:scale-105 hover:shadow-xl whitespace-nowrap">
               <div className="flex items-center justify-center w-7 h-7 sm:w-10 sm:h-10 rounded-full bg-black transition-all duration-300 group-hover:bg-white flex-shrink-0">
                 <Play className="w-4 h-4 sm:w-6 sm:h-6 fill-white stroke-white transition-all duration-300 group-hover:fill-[#D11417] group-hover:stroke-[#D11417]" />
@@ -100,7 +100,7 @@ export default function Initiative() {
               <span className="group-hover:text-white transition-colors duration-300">
                 Watch Videos
               </span>
-            </button>
+            </button>*/}
           </div>
         </div>
       </div>
@@ -127,14 +127,12 @@ export default function Initiative() {
             C S R
           </p>
 
-          <h2 className="text-[40px] font-bold text-black leading-[100%] tracking-normal" style={{ fontFamily: 'Open Sans' }}>
-            Join our initiatives
+          <h2 className="text-[30px] font-bold text-black leading-[100%] tracking-normal" style={{ fontFamily: 'Open Sans' }}>
+            Our Commitment to Community
           </h2>
 
           <p className="text-gray-600 text-[20px] font-nunito leading-[140%] tracking-normal max-w-xl">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor. Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit. Sed do eiusmod tempor.
+            At Heartland General Trading, we believe in making a positive impact. We’re dedicated to  supporting our communities and promoting sustainability in everything we do. Together, we  strive for a better future.
           </p>
 
           {/* Buttons */}
@@ -144,7 +142,7 @@ export default function Initiative() {
               Learn More
             </button>
 
-            {/* Watch Videos Button */}
+            {/* Watch Videos Button
             <button className="font-nunito group flex items-center justify-center gap-3 border-[3px] border-[#D11417] text-black font-bold text-xl px-8 py-3.5 rounded-full transition-all duration-300 hover:bg-[#D11417] hover:border-[#D11417] hover:scale-105 hover:shadow-xl">
               <div className="flex items-center justify-center w-10 h-10 rounded-full bg-black transition-all duration-300 group-hover:bg-white">
                 <Play className="w-6 h-6 fill-white stroke-white transition-all duration-300 group-hover:fill-[#D11417] group-hover:stroke-[#D11417]" />
@@ -152,7 +150,7 @@ export default function Initiative() {
               <span className="group-hover:text-white transition-colors duration-300">
                 Watch Videos
               </span>
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

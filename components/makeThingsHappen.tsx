@@ -47,20 +47,20 @@ export default function HeroBanner() {
               </div>
 
               {/* Content block */}
-              <div className="relative z-20 flex flex-col items-start text-left text-white px-6 max-w-xl">
+              <div className="relative z-20 flex flex-col items-start text-left text-white max-w-xl">
                 <h1
                   className="font-openSans font-bold text-[40px] leading-10 text-white"
                   style={{ maxWidth: 800 }}
                 >
-                  Let&apos;s make things happen
+                   Get in Touch
                 </h1>
 
                 <p
                   className="mt-4 text-[16px] leading-6 text-[#FAFAFA] max-w-full font-openSans"
                   style={{ opacity: 1 }}
                 >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                  eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  We’d love to hear from you! Whether you have questions about our products or need  assistance, our team is here to help. Please fill out the contact 
+                  form or reach out to us directly.  Your feedback is important to us!
                 </p>
 
                 <Link href="/Contact">
