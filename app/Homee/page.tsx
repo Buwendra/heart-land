@@ -14,9 +14,9 @@ export default function HomePagee() {
     <Partners />
     <Blog/>
      <Initiative /> 
-    {/* <Testimonials />  - hide for now */} 
+    {/* <Testimonials />  - hide for now */}  {/* test */} 
     <Faq />
-    <HeroBanner />   
-    </>
+    <HeroBanner />    
+    </> 
   );
 }
