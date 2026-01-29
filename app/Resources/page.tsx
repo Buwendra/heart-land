@@ -3,6 +3,7 @@ import SuccessStory from '@/components/successStory';
 import CommunityPillar from '@/components/CommunityPillar';
 import SchoolProfessionalities from '@/components/SchoolProfessionalities';
 import HeartlandB2BNetwork from '@/components/Heartlandb2bNetwork';
+import BrandsDistributionStrength from '@/components/brandsDistributionStrength';
 
 export default function Resources() {
   return (
@@ -13,6 +14,7 @@ export default function Resources() {
     <BlogCards /> */}
     <CommunityPillar/>
     <SchoolProfessionalities/>
+    <BrandsDistributionStrength />
     <HeartlandB2BNetwork/>
     </ >
 

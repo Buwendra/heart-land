@@ -64,7 +64,7 @@ useEffect(() => {
         
         {/* Box 1 */}
         <div
-          className="bg-white rounded-[20px] border border-[#EAEAEA] shadow-sm flex flex-col items-left gap-[10px]"
+          className="bg-white rounded-[20px] border border-[#EAEAEA] shadow-sm flex flex-col items-left gap-2.5"
           style={{
             width: 250,
             height: 97,

@@ -64,7 +64,7 @@ const initialProducts: Product[] = [
   { id: 27, title: "Dried Fish Talapath (200g)", price: 0, category: "Dry Fish", image: "/products/_DSC0273.jpg" },
   { id: 28, title: "Dried Fish - Keeramin (200g)", price: 0, category: "Dry Fish", image: "/products/_DSC0284.jpg" },
   { id: 29, title: "Dried Sprats (200g)", price: 0, category: "Dry Fish", image: "/products/_DSC0286_.jpg" },
-  { id: 30, title: "Dried Fish - Shrimp (100g)", price: 0, category: "Dry Fish", image: "/products/_DSC0201.jpg" },
+  { id: 30, title: "Dried Fish - Shrimp (100g)", price: 0, category: "Dry Fish", image: "/products/_DSC0284.jpg" },
   { id: 31, title: "Dried Fish - KATTA (200g)", price: 0, category: "Dry Fish", image: "/products/_DSC0291.JPG" },
 
   // Spices

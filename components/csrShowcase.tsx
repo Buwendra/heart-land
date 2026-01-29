@@ -1,12 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { Oswald, Questrial, Inter, Newsreader, Nunito } from "next/font/google";
+import { Oswald, Questrial, Newsreader, Nunito } from "next/font/google";
 import { useEffect, useState } from "react";
+import { inter } from "@/app/fonts";
+
 
 const nunito = Nunito({ subsets: ["latin"], weight: ["400", "600", "700"] });
 const newsReader = Newsreader({ subsets: ["latin"] });
-const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600"] });
 const oswald = Oswald({ subsets: ["latin"], weight: ["700"] });
 const questrial = Questrial({ subsets: ["latin"], weight: ["400"] });
 
