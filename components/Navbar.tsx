@@ -50,7 +50,7 @@ export default function Navbar() {
   return (
     <>
       {/* ================= HEADER ================= */}
-      <header className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-1 sm:pt-6 lg:pt-8 flex items-center justify-between bg-transparent md:bg-white">
+      <header className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 pt-1 sm:pt-6 lg:pt-8 flex items-center justify-between bg-transparent md:bg-white">
         
         {/* ===== Mobile Header ===== */}
         <div className="flex md:hidden items-center justify-between w-full">

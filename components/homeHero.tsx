@@ -8,7 +8,7 @@ export default function HomeHero() {
   return (
     <main className="bg-white text-slate-900">
       {/* Hero Section */}
-      <section className="relative w-full px-15 overflow-hidden">
+      <section className="relative w-full px-0 md:px-15 overflow-hidden">
         {/* Mobile Layout (below md) */}
 <div className="md:hidden relative bg-white overflow-x-hidden">
   {/* World Map */}
