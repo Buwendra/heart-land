@@ -8,7 +8,7 @@ export default function HomeHero() {
   return (
     <main className="bg-white text-slate-900">
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
+      <section className="relative w-full px-15 overflow-hidden">
         {/* Mobile Layout (below md) */}
 <div className="md:hidden relative bg-white overflow-x-hidden">
   {/* World Map */}
@@ -147,8 +147,8 @@ export default function HomeHero() {
         </div>
 
         {/* Desktop/Tablet Layout (md and above) */}
-        <div className="hidden md:block max-w-7xl mx-auto px-4 sm:px-6 py-10 md:py-20 relative
-                2xl:max-w-[1400px] 3xl:max-w-[1600px]">
+        <div className="hidden md:block w-full relative py-10 md:py-20">
+
 
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
