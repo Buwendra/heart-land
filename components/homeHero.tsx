@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ParallaxLayer from "./ParallaxLayer";
 
+
 export default function HomeHero() {
   return (
     <main className="bg-white text-slate-900">
@@ -11,23 +12,38 @@ export default function HomeHero() {
         {/* Mobile Layout (below md) */}
         <div className="md:hidden relative bg-white">
           {/* World Map - Top Center Background */}
-          <ParallaxLayer
-            speed={0.1}
-            className="absolute -left-[300px] -top-45 w-[1000px] h-[1200px] opacity-80 pointer-events-none z-0"
-          >
-            <Image
-              src="/MapNew.png"
-              alt="world map"
-              width={1220}
-              height={880}
-              className="object-contain rotate-[8deg]"
-            />
-          </ParallaxLayer>
+          {/* World Map - Top Center Background */}
+<ParallaxLayer
+  speed={0.1}
+  className="absolute opacity-80 pointer-events-none z-0"
+  style={{
+    left: "clamp(-380px, -35vw, -260px)",
+    top: "clamp(-120px, -10vw, -40px)",
+    width: "clamp(820px, 120vw, 1100px)",
+    height: "clamp(900px, 140vw, 1300px)",
+  }}
+>
+  <Image
+    src="/MapNew.png"
+    alt="world map"
+    width={1220}
+    height={880}
+    className="object-contain rotate-[8deg]"
+  />
+</ParallaxLayer>
+
 
           {/* Sri Lankan Map - Right Side */}
           <ParallaxLayer
             speed={0.15}
-            className="absolute -right-[350px] top-8 w-[1000px] h-[800px] z-10"
+            className="absolute z-10"
+style={{
+  right: "clamp(-420px, -40vw, -260px)",
+  top: "clamp(10px, 2vw, 40px)",
+  width: "clamp(760px, 110vw, 1050px)",
+  height: "clamp(520px, 80vw, 820px)",
+}}
+
           >
             <Image
               src="/image 10.png"
@@ -39,7 +55,14 @@ export default function HomeHero() {
           </ParallaxLayer>
 
           {/* Content Section - Left Side */}
-          <div className="relative z-20 px-6 pt-75 pb-4 max-w-[80%]">
+          <div
+  className="relative z-20 px-6 pb-4"
+  style={{
+    paddingTop: "clamp(220px, 40vw, 320px)",
+    maxWidth: "clamp(260px, 82vw, 420px)",
+  }}
+>
+
             {/* H1 */}
             <h1
               className="font-extrabold text-[32px] leading-[45px] tracking-[0.02em] mb-4"
@@ -133,7 +156,7 @@ export default function HomeHero() {
         </div>
 
         {/* Desktop/Tablet Layout (md and above) */}
-        <div className="hidden md:block max-w-7xl mx-auto px-4 sm:px-6 py-10 md:py-20">
+        <div className="hidden md:block max-w-7xl mx-auto px-4 sm:px-6 py-10 md:py-20 relative">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             {/* Ellipses */}
             <div className="absolute bottom-96 -left-20 z-30 hidden lg:block">
