@@ -10,58 +10,49 @@ export default function HomeHero() {
       {/* Hero Section */}
       <section className="relative overflow-hidden">
         {/* Mobile Layout (below md) */}
-        <div className="md:hidden relative bg-white">
-          {/* World Map - Top Center Background */}
-          {/* World Map - Top Center Background */}
-<ParallaxLayer
-  speed={0.1}
-  className="absolute opacity-80 pointer-events-none z-0"
-  style={{
-    left: "clamp(-380px, -35vw, -260px)",
-    top: "clamp(-120px, -10vw, -40px)",
-    width: "clamp(820px, 120vw, 1100px)",
-    height: "clamp(900px, 140vw, 1300px)",
-  }}
->
-  <Image
-    src="/MapNew.png"
-    alt="world map"
-    width={1220}
-    height={880}
-    className="object-contain rotate-[8deg]"
-  />
-</ParallaxLayer>
+<div className="md:hidden relative bg-white overflow-x-hidden">
+  {/* World Map */}
+  <ParallaxLayer
+    speed={0.1}
+    className="absolute opacity-80 pointer-events-none z-0"
+    style={{
+      left: "-300px",
+      top: "-60px",
+      width: "1000px",
+      height: "1200px",
+    }}
+  >
+    <Image
+      src="/MapNew.png"
+      alt="world map"
+      width={1220}
+      height={880}
+      className="object-contain rotate-[8deg]"
+    />
+  </ParallaxLayer>
 
+  {/* Sri Lankan Map */}
+  <ParallaxLayer
+    speed={0.15}
+    className="absolute z-10 pointer-events-none"
+    style={{
+      right: "-350px",
+      top: "32px",
+      width: "1000px",
+      height: "800px",
+    }}
+  >
+    <Image
+      src="/image 10.png"
+      alt="SL map"
+      fill
+      style={{ objectFit: "contain", objectPosition: "right top" }}
+      priority
+    />
+  </ParallaxLayer>
 
-          {/* Sri Lankan Map - Right Side */}
-          <ParallaxLayer
-            speed={0.15}
-            className="absolute z-10"
-style={{
-  right: "clamp(-420px, -40vw, -260px)",
-  top: "clamp(10px, 2vw, 40px)",
-  width: "clamp(760px, 110vw, 1050px)",
-  height: "clamp(520px, 80vw, 820px)",
-}}
-
-          >
-            <Image
-              src="/image 10.png"
-              alt="SL map"
-              fill
-              style={{ objectFit: "contain", objectPosition: "right top" }}
-              priority
-            />
-          </ParallaxLayer>
-
-          {/* Content Section - Left Side */}
-          <div
-  className="relative z-20 px-6 pb-4"
-  style={{
-    paddingTop: "clamp(220px, 40vw, 320px)",
-    maxWidth: "clamp(260px, 82vw, 420px)",
-  }}
->
+  {/* Content */}
+  <div className="relative z-20 px-6 mr-10 pr-10 pb-4 pt-[300px] max-w-[420px]">
 
             {/* H1 */}
             <h1
@@ -156,7 +147,10 @@ style={{
         </div>
 
         {/* Desktop/Tablet Layout (md and above) */}
-        <div className="hidden md:block max-w-7xl mx-auto px-4 sm:px-6 py-10 md:py-20 relative">
+        <div className="hidden md:block max-w-7xl mx-auto px-4 sm:px-6 py-10 md:py-20 relative
+                2xl:max-w-[1400px] 3xl:max-w-[1600px]">
+
+
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             {/* Ellipses */}
             <div className="absolute bottom-96 -left-20 z-30 hidden lg:block">
@@ -277,12 +271,18 @@ style={{
             </div>
 
             {/* Right illustration */}
-            <div className="md:col-span-5 lg:col-span-6 relative flex items-center justify-center min-h-[400px] md:min-h-[600px]">
+              <div className="md:col-span-5 lg:col-span-6 relative flex items-center justify-center min-h-[400px] md:min-h-[600px]
+                2xl:justify-end">
+
+
               {/* World Map - Background Layer */}
               <ParallaxLayer
                 speed={0.1}
-                className="absolute md:-left-[500px] lg:-left-120 xl:-left-140 -top-28 md:w-[1200px] lg:w-[1600px] xl:w-[2020px] md:h-[700px] lg:h-[900px] xl:h-[1080px] md:opacity-50 lg:opacity-60 pointer-events-none"
-              >
+                className="absolute md:-left-[500px] lg:-left-120 xl:-left-140 2xl:-left-[520px] 3xl:-left-[580px] -top-28
+           md:w-[1200px] lg:w-[1600px] xl:w-[2020px] 2xl:w-[2200px] 3xl:w-[2400px]
+           md:h-[700px] lg:h-[900px] xl:h-[1080px] 2xl:h-[1150px] 3xl:h-[1250px]
+           md:opacity-50 lg:opacity-60 pointer-events-none"
+>
                 <Image
                   src="/MapNew.png"
                   alt="world map"

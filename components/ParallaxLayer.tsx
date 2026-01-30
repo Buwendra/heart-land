@@ -1,30 +1,29 @@
 "use client";
 
-import React, { useEffect, useRef, ReactNode } from "react";
-
-type ParallaxLayerProps = {
-  speed: number;
-  className?: string;
-  style?: React.CSSProperties;
-  children: ReactNode;
-};
+import { useEffect, useRef, ReactNode } from "react";
 
 export default function ParallaxLayer({
   speed,
   className,
   style,
   children,
-}: ParallaxLayerProps) {
+}: {
+  speed: number;
+  className?: string;
+  style?: React.CSSProperties;
+  children: ReactNode;
+}) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       if (ref.current) {
-        ref.current.style.transform = `translateY(${window.scrollY * speed}px)`;
+        // smoother + less “jump”
+        ref.current.style.transform = `translate3d(0, ${window.scrollY * speed}px, 0)`;
       }
     };
-
     window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, [speed]);
 
