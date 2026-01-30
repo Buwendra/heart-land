@@ -9,12 +9,12 @@ export default function AboutHero() {
   const [mounted, setMounted] = useState(false);
   const imageRef = useRef<HTMLDivElement>(null);
 
-useEffect(() => {
-  const timer = setTimeout(() => setMounted(true), 0);
-  return () => clearTimeout(timer);
-}, []);
+  useEffect(() => {
+    const timer = setTimeout(() => setMounted(true), 0);
+    return () => clearTimeout(timer);
+  }, []);
 
-  // Parallax scrolling  
+  // Parallax scrolling
   useEffect(() => {
     const handleScroll = () => {
       if (!imageRef.current) return;
@@ -41,22 +41,32 @@ useEffect(() => {
         </div>
 
         {/* Text Content - Centered */}
-        <div className="text-center mb-8 px-8">
-          <p className="text-[16px] font-semibold text-[#BA5561] tracking-[3px] uppercase mb-5" style={{ fontFamily: 'Open Sans' }}>
+        <div className="text-center mb-30 px-12">
+          <p
+            className="text-[16px] font-semibold text-[#BA5561] tracking-[3px] uppercase mb-5"
+            style={{ fontFamily: "Open Sans" }}
+          >
             A Bit
           </p>
-          <h1 className="text-[25px] font-bold mb-4 tracking-[4px]" style={{ fontFamily: 'Open Sans' }}>A 25-Year Legacy of Authenticity</h1>
+          <h1
+            className="text-[25px] font-bold mb-4 tracking-[4px]"
+            style={{ fontFamily: "Open Sans" }}
+          >
+            A 25-Year Legacy of Authenticity
+          </h1>
           <p className="text-[14px] text-gray-700 mb-6 leading-8.5 font-nunito ">
-            Welcome to Heartland General Trading Co LLC, your premier gateway to the authentic  
-            flavors of Sri Lanka in the UAE. Established in 2001 by entrepreneur Mohamed Fazal  
-            Mawjood, we are proud to have served our community for over 25 years. From our humble  
-            beginnings to becoming a household name, we offer a masterfully curated selection of spices,  
-            premium rice varieties, condiments, snacks, and more.  
-
+            Welcome to Heartland General Trading Co LLC, your premier gateway to
+            the authentic flavors of Sri Lanka in the UAE. Established in 2001
+            by entrepreneur Mohamed Fazal Mawjood, we are proud to have served
+            our community for over 25 years. From our humble beginnings to
+            becoming a household name, we offer a masterfully curated selection
+            of spices, premium rice varieties, condiments, snacks, and more.
           </p>
           <button
             onClick={() => {
-              document.getElementById('evolution-section')?.scrollIntoView({ behavior: 'smooth' });
+              document
+                .getElementById("evolution-section")
+                ?.scrollIntoView({ behavior: "smooth" });
             }}
             className="
               inline-block  font-semibold text-[14px]
@@ -81,43 +91,55 @@ useEffect(() => {
       </section>
 
       {/* Desktop/Tablet Layout - Hidden on mobile */}
-      <section className="hidden md:flex max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 mt-20 md:mt-24 lg:mt-30 flex-col md:flex-row items-center gap-8 md:gap-10 lg:gap-12 xl:gap-16">
+      <section className="hidden md:flex max-w-[1600px] mx-auto px-[clamp(16px,3.5vw,60px)] mt-[7vw] mb-[clamp(80px,8vw,160px)] flex-row items-center gap-[4vw]">
         {/* Left Content */}
-        <div className="flex-1 w-full md:max-w-[50%] lg:max-w-[45%] xl:ml-12 2xl:ml-28 mb-12 md:mb-16 lg:mb-20">
-          <p className="text-base sm:text-lg font-semibold text-[#BA5561] tracking-[3px] uppercase mb-2" style={{ fontFamily: 'Open Sans' }}>
+        <div className="flex-1 w-full max-w-[48%] ml-[clamp(8px,1vw,16px)] mb-[5vw]">
+          <p
+            className="text-[clamp(11px,1.6vw,22px)] font-semibold text-[#BA5561] tracking-[clamp(1px,0.3vw,4px)] uppercase mb-[clamp(4px,0.8vw,12px)]"
+            style={{ fontFamily: "Open Sans" }}
+          >
             A Bit
           </p>
-          <h1 className="text-[18px] sm:text-xl lg:text-[52px] tracking-[5px] leading-16 font-bold mb-4 md:mb-6" style={{ fontFamily: 'Open Sans' }}>
-            A 25-Year Legacy of Authenticity</h1>
-          <p className="text-[15px] sm:text-lg text-gray-700 mb-6 leading-relaxed font-nunito">
-           Welcome to Heartland General Trading Co LLC, your premier gateway to the authentic  
-           flavors of Sri Lanka in the UAE. Established in 2001 by entrepreneur Mohamed Fazal  
-           Mawjood, we are proud to have served our community for over 25 years. From our humble 
-            beginnings to becoming a household name, we offer a masterfully curated selection of spices, 
-             premium rice varieties, condiments, snacks, and more.  
-
+          <h1
+            className="text-[clamp(16px,4.2vw,56px)] tracking-[clamp(1px,0.45vw,6px)] leading-[1.15] font-bold mb-[clamp(6px,2.2vw,32px)]"
+            style={{ fontFamily: "Open Sans" }}
+          >
+            A 25-Year Legacy of Authenticity
+          </h1>
+          <p className="text-[clamp(11px,1.35vw,20px)] text-gray-700 mb-[clamp(10px,2vw,40px)] leading-[clamp(18px,2.6vw,36px)] font-nunito">
+            Welcome to Heartland General Trading Co LLC, your premier gateway to
+            the authentic flavors of Sri Lanka in the UAE. Established in 2001
+            by entrepreneur Mohamed Fazal Mawjood, we are proud to have served
+            our community for over 25 years. From our humble beginnings to
+            becoming a household name, we offer a masterfully curated selection
+            of spices, premium rice varieties, condiments, snacks, and more.
           </p>
           <button
             onClick={() => {
-              document.getElementById('evolution-section')?.scrollIntoView({ behavior: 'smooth' });
+              document
+                .getElementById("evolution-section")
+                ?.scrollIntoView({ behavior: "smooth" });
             }}
             className="
-              inline-block uppercase font-semibold text-sm sm:text-lg
-              text-[#D11417]  px-0 sm:py-4
-               transition-all duration-300 ease-out
+              inline-block uppercase font-semibold text-[clamp(10px,1.3vw,20px)]
+              text-[#D11417] px-0 py-[clamp(4px,1.2vw,18px)]
+              transition-all duration-300 ease-out
               relative overflow-hidden
               hover:scale-[1.02]
-              hover:-translate-y-1 transform-gpu tracking-widest
+              hover:-translate-y-1 transform-gpu tracking-[clamp(1px,0.25vw,4px)]
               cursor-pointer
             "
           >
-          Explore More &gt;&gt;
+            Explore More &gt;&gt;
           </button>
         </div>
 
         {/* Right Images with parallax */}
-        <div ref={imageRef} className="flex-1 w-full md:max-w-[50%] lg:max-w-[55%] xl:mr-12 2xl:mr-36 relative">
-          <div className="relative w-full max-w-[720px] ml-auto">
+        <div
+          ref={imageRef}
+          className="flex-1 w-full max-w-[52%] mr-[clamp(8px,1vw,16px)] relative"
+        >
+          <div className="relative w-full max-w-[clamp(400px,50vw,720px)] ml-auto">
             <Image
               src="/Rectangle 88.png"
               alt="About 1"
@@ -130,31 +152,38 @@ useEffect(() => {
               alt="About 2"
               width={620}
               height={520}
-              className="rounded-xl mt-5 md:mt-7 w-full max-w-[620px] h-auto"
+              className="rounded-xl mt-[clamp(8px,1.2vw,28px)] w-full max-w-full h-auto"
             />
-            <div className="absolute -bottom-12 md:-bottom-16 left-0 flex items-end gap-3 md:gap-5">
+            <div
+              className="absolute left-0 flex items-end gap-[clamp(4px,1.2vw,20px)]"
+              style={{ bottom: "clamp(-150px, -10vw, -50px)" }}
+            >
               <Image
-              src="/Rectangle 90.png"
-              alt="food 1"
-              width={250}
-              height={210}
-              className="
-                rounded-lg
-                -ml-8 md:-ml-10 lg:-ml-14
-                -mb-2 md:-mb-3
-                w-[180px] sm:w-[220px] md:w-[220px] lg:w-60
-                h-auto
-              "
-            />
-            <div>
-              <Image
-                src="/25years.png"
-                alt="25 Years Experience"
-                width={170}
-                height={170}
-                className="object-contain -ml-3 sm:-ml-4 md:-ml-3"
+                src="/Rectangle 90.png"
+                alt="food 1"
+                width={400}
+                height={340}
+                className="rounded-lg h-auto"
+                style={{
+                  marginLeft: "clamp(-140px, -9vw, -40px)",
+                  marginBottom: "clamp(-30px, 1vw, -6px)",
+                  width: "clamp(180px, 24vw, 380px)",
+                }}
               />
-            </div>
+              <div>
+                <Image
+                  src="/25years.png"
+                  alt="25 Years Experience"
+                  width={220}
+                  height={220}
+                  className="object-contain h-auto"
+                  style={{
+                    width: "clamp(90px, 15vw, 240px)",
+                    marginLeft: "clamp(-20px, -1vw, -4px)",
+                    marginTop: "clamp(-40px, -2.5vw, -8px)",
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>
