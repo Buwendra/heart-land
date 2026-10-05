@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <footer className="font-openSans bg-[#1B1D21] text-white md:pb-10 md:pt-10 mt-0 px-6 md:px-15 md:py-0 py-1">
@@ -91,10 +93,10 @@ export default function Footer() {
           </div>
 
           <div className="flex gap-4 mt-4 md:mt-0">
-            <img src="/fb.png" alt="Facebook" className="w-5 h-5" />
-            <img src="/twitter.png" alt="Twitter" className="w-5 h-5" />
-            <img src="/instagram.png" alt="Instagram" className="w-5 h-5" />
-            <img src="/youtub.png" alt="YouTube" className="w-5 h-5" />
+            <Image src="/fb.png" alt="Facebook" width={20} height={20} className="w-5 h-5 object-contain" />
+            <Image src="/twitter.png" alt="Twitter" width={20} height={20} className="w-5 h-5 object-contain" />
+            <Image src="/instagram.png" alt="Instagram" width={20} height={20} className="w-5 h-5 object-contain" />
+            <Image src="/youtub.png" alt="YouTube" width={20} height={20} className="w-5 h-5 object-contain" />
           </div>
         </div>
 

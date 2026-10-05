@@ -1,11 +1,9 @@
 "use client";
 
-import { useMemo, useState, useEffect } from "react";
+import { useMemo, useState, useLayoutEffect, useRef } from "react";
 import { openSans } from "@/app/fonts";
 import Image from "next/image";
-import { Search } from "lucide-react";
-import { SlidersHorizontal } from "lucide-react";
-import { useLayoutEffect, useRef } from "react";
+import { Search, SlidersHorizontal } from "lucide-react";
 
 type Product = {
   id: number;
@@ -414,10 +412,9 @@ const initialProducts: Product[] = [
 export default function ProductsSection() {
   const [query, setQuery] = useState("");
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
-  const [sortBy, setSortBy] = useState<
+  const [sortBy] = useState<
     "bestselling" | "price-asc" | "price-desc" | "alpha"
   >("bestselling");
-  const [showImageOnly, setShowImageOnly] = useState(false);
 
   // pagination state
   const pageSize = 9;
@@ -506,26 +503,12 @@ export default function ProductsSection() {
 
     return list;
   }, [query, selectedCategories, sortBy]);
-  // Reset page when filters/search change
-  useEffect(() => {
-    if (page !== 0) {
-      setPage(0);
-    }
-  }, [query, selectedCategories, sortBy]);
-
-  // Safety clamp in case filtered results shrink
-  useEffect(() => {
-    if (page !== 0) {
-      const maxPage = Math.max(0, Math.ceil(filtered.length / pageSize) - 1);
-      setPage((prev) => Math.min(prev, maxPage));
-    }
-  }, [filtered.length]);
-
   // pagination helpers
   const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
+  const currentPage = Math.min(page, totalPages - 1);
   const clampPage = (p: number) => Math.max(0, Math.min(totalPages - 1, p));
   const goToPage = (p: number) => setPage(clampPage(p));
-  const paginated = filtered.slice(page * pageSize, (page + 1) * pageSize);
+  const paginated = filtered.slice(currentPage * pageSize, (currentPage + 1) * pageSize);
 
   const [showFilters, setShowFilters] = useState(false);
 
@@ -692,17 +675,11 @@ export default function ProductsSection() {
                     </div>
                   </div>
 
-                  {!showImageOnly ? (
-                    <div className="bg-gray-100 rounded-b-xl p-4">
-                      <div className="flex items-center justify-between mb-2">
-                        <h4 className="font-semibold text-sm">{p.title}</h4>
-                      </div>
-                      {/* Price Was removed  */}
-                      <div className="text-3xl font-bold"></div>
+                  <div className="bg-gray-100 rounded-b-xl p-4">
+                    <div className="flex items-center justify-between mb-2">
+                      <h4 className="font-semibold text-sm">{p.title}</h4>
                     </div>
-                  ) : (
-                    <div className="h-0 m-0 p-0"></div>
-                  )}
+                  </div>
                 </article>
               ))
             )}

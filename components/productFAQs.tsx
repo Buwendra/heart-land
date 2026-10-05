@@ -31,10 +31,12 @@ export default function ProductFaqs() {
 
       {/* Desktop background image   */}
       <div className="absolute inset-0 opacity-100 mt-1 ml-[800px] pointer-events-none hidden md:block">
-        <img
+        <Image
           src="/sriLankaMap.png"
           alt="SL Map Background"
-          className="w-[600px] h-[500px] object-left"
+          width={600}
+          height={500}
+          className="w-[600px] h-[500px] object-left object-contain"
         />
       </div>
 

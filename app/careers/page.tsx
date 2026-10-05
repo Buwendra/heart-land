@@ -1,4 +1,3 @@
-import Link from "next/link";
 export default function CareersPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-white px-4">

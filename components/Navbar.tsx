@@ -20,10 +20,13 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
 
-  //   prevents  stuck  overlay when route changes
+  //   prevents stuck overlay when route changes
   useEffect(() => {
-    setIsOpen(false);
-    setIsClosing(false);
+    const timer = setTimeout(() => {
+      setIsOpen(false);
+      setIsClosing(false);
+    }, 0);
+    return () => clearTimeout(timer);
   }, [pathname]);
 
   const handleClose = () => {

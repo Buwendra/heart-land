@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { Play } from "lucide-react";
 
 export default function Initiative() {
   const imageRef = React.useRef<HTMLDivElement>(null);

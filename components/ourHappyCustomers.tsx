@@ -15,7 +15,6 @@ export default function Testimonials() {
   const desktopContainerRef = useRef<HTMLDivElement | null>(null);
   const bgRef = useRef<HTMLDivElement | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const scrollToIndex = (index: number) => {
     // Check which container is visible
@@ -152,11 +151,7 @@ export default function Testimonials() {
               {testimonials.map((_, idx) => (
                 <button
                   key={idx}
-                  onClick={() => {
-                    setIsTransitioning(true);
-                    setActiveIndex(idx);
-                    setTimeout(() => setIsTransitioning(false), 500);
-                  }}
+                  onClick={() => setActiveIndex(idx)}
                   aria-label={`Go to slide ${idx + 1}`}
                   className={`w-[4px] h-[4px] rounded-full cursor-pointer transition-all ${
                     idx === activeIndex ? "bg-[#D11417]" : "bg-[#D1D5DB]"

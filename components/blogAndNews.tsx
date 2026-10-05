@@ -2,10 +2,7 @@
 
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
-
 export default function AboutUsPage() {
-  const router = useRouter();
 
   const [offsetY, setOffsetY] = useState(0);
   const [isMobile, setIsMobile] = useState(false);

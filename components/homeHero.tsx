@@ -2,9 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import ParallaxLayer from "./ParallaxLayer";
-import { div, section } from "framer-motion/client";
 
 export default function HomeHero() {
   return (

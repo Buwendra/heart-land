@@ -1,19 +1,10 @@
 "use client";
-import { ArrowRight } from "lucide-react";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 
 export default function AboutHero() {
-  const pathname = usePathname();
-  const [mounted, setMounted] = useState(false);
   const imageRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setMounted(true), 0);
-    return () => clearTimeout(timer);
-  }, []);
 
   // Parallax scrolling
   useEffect(() => {
