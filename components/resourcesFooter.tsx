@@ -60,7 +60,7 @@ export default function Footer() {
     <h4 className="font-bold text-xl mb-4">Contact Us</h4>
     <p className="text-sm text-gray-300 leading-6 mb-4">
       <span className="font-semibold">Corporate Office</span><br/>
-      Heartland General Trading FZE<br/>
+      Heartland General Trading Co LLC<br/>
       Warehouse No. 18, Industrial Area 3,<br/>
       Al Qusais, Dubai, United Arab Emirates
     </p>
@@ -82,7 +82,7 @@ export default function Footer() {
 
         {/* BOTTOM BAR */}
         <div className="flex flex-col  md:flex-row justify-between items-center pt-6 text-sm text-gray-400">
-          <p>© 2025 Heartland General Trading FZE. All Rights Reserved.</p>
+          <p>© 2025 Heartland General Trading Co LLC. All Rights Reserved.</p>
 
           <div className="flex gap-6 mt-4 md:mt-0">
             <a href="#">Terms</a>

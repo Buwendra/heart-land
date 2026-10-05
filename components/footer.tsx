@@ -195,7 +195,7 @@ export default function Footer() {
 
           {/* Copyright */}
           <p className="text-sm text-white text-left mb-4">
-            © 2025 Heartland General Trading FZE. <br />
+            © 2025 Heartland General Trading Co LLC. <br />
             All Rights Reserved.
           </p>
 
@@ -392,7 +392,7 @@ export default function Footer() {
           {/* BOTTOM BAR */}
           <div className="flex flex-col md:flex-row justify-between items-center pt-6 gap-4 md:gap-0 text-sm text-gray-400">
             <p className="text-center md:text-left">
-              © 2025 Heartland General Trading FZE. All Rights Reserved.
+              © 2025 Heartland General Trading Co LLC. All Rights Reserved.
             </p>
 
             {/* Terms Privacy Cookies */}

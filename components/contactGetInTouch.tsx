@@ -1,9 +1,78 @@
 "use client";
 
-import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
+import { useState } from "react";
+import { Facebook, Instagram, Loader2, CheckCircle2, AlertCircle } from "lucide-react";
 import { contactDetails } from "@/data/contactDetails";
 
+interface FormData {
+  fullName: string;
+  email: string;
+  inquiryType: string;
+  subject: string;
+  message: string;
+}
+
+const initialFormData: FormData = {
+  fullName: "",
+  email: "",
+  inquiryType: "",
+  subject: "",
+  message: "",
+};
+
 export default function ContactGetInTouch() {
+  const [formData, setFormData] = useState<FormData>(initialFormData);
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
+
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setStatus({ type: null, message: "" });
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to send message.");
+      }
+
+      setStatus({
+        type: "success",
+        message:
+          data.message || "Thank you! Your message has been sent successfully.",
+      });
+      setFormData(initialFormData);
+    } catch (error: unknown) {
+      const errMessage =
+        error instanceof Error ? error.message : "Something went wrong. Please try again.";
+      setStatus({
+        type: "error",
+        message: errMessage,
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <>
       <section className="font-openSans w-full bg-white py-5 px-8 md:px-20 lg:mb-10">
@@ -18,15 +87,37 @@ export default function ContactGetInTouch() {
               next step
             </p>
 
+            {/* Status Notification Banner */}
+            {status.type && (
+              <div
+                className={`max-w-md w-full mb-6 p-4 rounded flex items-center gap-3 text-sm transition-all ${
+                  status.type === "success"
+                    ? "bg-green-50 text-green-800 border border-green-200"
+                    : "bg-red-50 text-red-800 border border-red-200"
+                }`}
+              >
+                {status.type === "success" ? (
+                  <CheckCircle2 className="w-5 h-5 text-green-600 shrink-0" />
+                ) : (
+                  <AlertCircle className="w-5 h-5 text-red-600 shrink-0" />
+                )}
+                <span>{status.message}</span>
+              </div>
+            )}
+
             {/* Desktop Form */}
             <div className="hidden lg:block">
-              <form className="space-y-4 sm:space-y-6 max-w-md w-full">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6 max-w-md w-full">
                 <div>
                   <label className="block text-base sm:text-lg mt-6 sm:mt-10 text-[#444444] mb-2">
                     Full name
                   </label>
                   <input
                     type="text"
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    required
                     placeholder=""
                     className="w-full bg-transparent border-0 border-b border-[#D11417] focus:outline-none focus:border-[#D11417] px-0 py-2 placeholder-gray-300 text-sm sm:text-base text-black"
                   />
@@ -38,6 +129,10 @@ export default function ContactGetInTouch() {
                   </label>
                   <input
                     type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
                     className="w-full bg-transparent border-0 border-b border-[#D11417] focus:outline-none focus:border-[#D11417] px-0 py-2 placeholder-gray-300 text-sm sm:text-base text-black"
                   />
                 </div>
@@ -47,9 +142,11 @@ export default function ContactGetInTouch() {
                   </label>
 
                   <select
+                    name="inquiryType"
+                    value={formData.inquiryType}
+                    onChange={handleChange}
                     className="w-full bg-transparent border-0 border-b border-[#D11417] focus:outline-none 
     focus:border-[#D11417] px-0 py-4 text-sm sm:text-base text-black"
-                    defaultValue=""
                     required
                   >
                     <option value="" disabled className="text-gray-500">
@@ -67,6 +164,10 @@ export default function ContactGetInTouch() {
                   </label>
                   <input
                     type="text"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    required
                     className="w-full bg-transparent border-0 border-b border-[#D11417] focus:outline-none focus:border-[#D11417] px-0 py-2 placeholder-gray-300 text-sm sm:text-base text-black"
                   />
                 </div>
@@ -77,6 +178,10 @@ export default function ContactGetInTouch() {
                   </label>
                   <textarea
                     rows={1}
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
                     className="w-full bg-transparent border-0 border-b border-[#D11417] focus:outline-none
                    focus:border-[#D11417] px-0 py-2 placeholder-gray-300 resize-none text-sm sm:text-base
                     text-black"
@@ -86,9 +191,11 @@ export default function ContactGetInTouch() {
                 <div className="pt-4">
                   <button
                     type="submit"
-                    className="w-full sm:w-auto inline-block h-10 sm:h-12 cursor-pointer bg-[#D11417] text-white px-4 sm:px-5 py-2 text-sm sm:text-base shadow-md hover:shadow-[0_15px_30px_rgba(209,20,23,0.4)] transition-all duration-300 ease-out hover:scale-105 hover:-translate-y-3 hover:rotate-1 transform-gpu rounded-tl-2xl rounded-br-xl rounded-tr-sm rounded-bl-sm"
+                    disabled={loading}
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-10 sm:h-12 cursor-pointer bg-[#D11417] text-white px-4 sm:px-5 py-2 text-sm sm:text-base shadow-md hover:shadow-[0_15px_30px_rgba(209,20,23,0.4)] transition-all duration-300 ease-out hover:scale-105 hover:-translate-y-3 hover:rotate-1 transform-gpu rounded-tl-2xl rounded-br-xl rounded-tr-sm rounded-bl-sm disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
                   >
-                    Send Message
+                    {loading && <Loader2 className="w-4 h-4 animate-spin" />}
+                    {loading ? "Sending..." : "Send Message"}
                   </button>
                 </div>
               </form>
@@ -121,7 +228,7 @@ export default function ContactGetInTouch() {
       </section>
 
       {/* Mobile Contact Info Section - Independent positioning */}
-      <div className="lg:hidden mx-4  mb-6 relative z-20">
+      <div className="lg:hidden mx-4 mb-6 relative z-20">
         <div className="bg-[#B10003] p-6 text-center">
           <h4 className="text-white text-m font-nunito font-light mb-3 mt-10 tracking-wide">
             Head Office
@@ -222,11 +329,33 @@ export default function ContactGetInTouch() {
             next step
           </p>
 
-          <form className="space-y-5 max-w-md mx-auto">
+          {/* Mobile Status Notification Banner */}
+          {status.type && (
+            <div
+              className={`max-w-md mx-auto mb-6 p-4 rounded flex items-center gap-3 text-sm transition-all ${
+                status.type === "success"
+                  ? "bg-green-900/40 text-green-200 border border-green-700"
+                  : "bg-red-900/40 text-red-200 border border-red-700"
+              }`}
+            >
+              {status.type === "success" ? (
+                <CheckCircle2 className="w-5 h-5 text-green-400 shrink-0" />
+              ) : (
+                <AlertCircle className="w-5 h-5 text-red-400 shrink-0" />
+              )}
+              <span>{status.message}</span>
+            </div>
+          )}
+
+          <form onSubmit={handleSubmit} className="space-y-5 max-w-md mx-auto">
             <div>
               <label className="block text-sm text-white mb-2">Full name</label>
               <input
                 type="text"
+                name="fullName"
+                value={formData.fullName}
+                onChange={handleChange}
+                required
                 placeholder=""
                 className="w-full bg-transparent border-0 border-b border-[#D11417] focus:outline-none focus:border-[#D11417] px-0 py-2 placeholder-gray-400 text-sm text-white"
               />
@@ -236,6 +365,10 @@ export default function ContactGetInTouch() {
               <label className="block text-sm text-white mb-2">Email</label>
               <input
                 type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
                 className="w-full bg-transparent border-0 border-b border-[#D11417] focus:outline-none focus:border-[#D11417] px-0 py-2 placeholder-gray-400 text-sm text-white"
               />
             </div>
@@ -245,9 +378,11 @@ export default function ContactGetInTouch() {
               </label>
 
               <select
+                name="inquiryType"
+                value={formData.inquiryType}
+                onChange={handleChange}
                 className="w-full bg-black border-0 border-b border-[#D11417] focus:outline-none 
     focus:border-[#D11417] px-0 py-2 text-sm text-white"
-                defaultValue=""
                 required
               >
                 <option value="" disabled className="text-gray-400">
@@ -263,6 +398,10 @@ export default function ContactGetInTouch() {
               <label className="block text-sm text-white mb-2">Subject</label>
               <input
                 type="text"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                required
                 className="w-full bg-transparent border-0 border-b border-[#D11417] focus:outline-none focus:border-[#D11417] px-0 py-2 placeholder-gray-400 text-sm text-white"
               />
             </div>
@@ -271,6 +410,10 @@ export default function ContactGetInTouch() {
               <label className="block text-sm text-white mb-2">Message</label>
               <textarea
                 rows={3}
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
                 className="w-full bg-transparent border-0 border-b border-[#D11417] focus:outline-none focus:border-[#D11417] px-0 py-2 placeholder-gray-400 resize-none text-sm text-white"
               />
             </div>
@@ -278,9 +421,11 @@ export default function ContactGetInTouch() {
             <div className="pt-4 flex justify-center">
               <button
                 type="submit"
-                className="w-auto inline-block h-10 sm:h-12 cursor-pointer bg-[#D11417] text-white px-4 sm:px-5 py-2 text-sm sm:text-base shadow-md hover:shadow-[0_15px_30px_rgba(209,20,23,0.4)] transition-all duration-300 ease-out hover:scale-105 hover:-translate-y-3 hover:rotate-1 transform-gpu rounded-tl-2xl rounded-br-xl rounded-tr-sm rounded-bl-sm"
+                disabled={loading}
+                className="w-auto inline-flex items-center justify-center gap-2 h-10 sm:h-12 cursor-pointer bg-[#D11417] text-white px-4 sm:px-5 py-2 text-sm sm:text-base shadow-md hover:shadow-[0_15px_30px_rgba(209,20,23,0.4)] transition-all duration-300 ease-out hover:scale-105 hover:-translate-y-3 hover:rotate-1 transform-gpu rounded-tl-2xl rounded-br-xl rounded-tr-sm rounded-bl-sm disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
               >
-                Send Message
+                {loading && <Loader2 className="w-4 h-4 animate-spin" />}
+                {loading ? "Sending..." : "Send Message"}
               </button>
             </div>
           </form>

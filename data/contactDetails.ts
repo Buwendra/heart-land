@@ -5,7 +5,7 @@ export const contactDetails = {
   mobileHotline: "+971 50 454 5684",
   fax: "+971 4 227 3382",
   corporateAddress: {
-    company: "Heartland General Trading FZE",
+    company: "Heartland General Trading Co LLC",
     line1: "Office 203A, Sheikha Maryam Building,",
     line2: "Deira, Dubai, UAE.",
   },

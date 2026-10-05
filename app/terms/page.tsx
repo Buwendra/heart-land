@@ -16,7 +16,7 @@ export default function TermsPage() {
       <h2 className="text-xl font-semibold mt-6 mb-2">Intellectual Property</h2>
       <p className="mb-4">
         All logos, trademarks, and content (including information about our 25-year expertise and partner brands)
-        are the property of Heartland General Trading FZE or its licensors. Reproduction is prohibited without prior written consent.
+        are the property of Heartland General Trading Co LLC or its licensors. Reproduction is prohibited without prior written consent.
       </p>
 
       <h2 className="text-xl font-semibold mt-6 mb-2">Product Information</h2>
